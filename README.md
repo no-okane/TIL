@@ -6,7 +6,7 @@
 <hr>
 
 ## 2025-04-04 : HTML(3)
-*`h1~h6`, `p`, `br`, `strong`, `em`, `del`, `s`, `sup`, `sub`
+* `h1~h6`, `p`, `br`, `strong`, `em`, `del`, `s`, `sup`, `sub`
 * `<blockquote></blockquote>`: 긴 인용문 태그
 * `<blockquote cite="출처 주소"></blockquote>`로 사용
 * 블록 태그, 사용은 잘 안 함
