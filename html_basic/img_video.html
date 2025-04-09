@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keyword" content="">
+
+        <title>이미지와 비디오 태그</title>
+        <link rel="shortcut icon" href="#" type="image/x-icon">
+        <link rel="icon" href="#" type="image/x-icon">
+    </head>
+
+    <body>
+        <h1>이미지 태그</h1>
+        <p>이미지 태그는 인라인으로 인라인 요소와 형제 관계여야 함</p>
+        <p>이미지 태그 작성 시 필수로 src, alt 속성 작성</p>
+        <div class="box">
+            <img src="./images/aoa_banner.jpg" alt="접근성 오픈 아카데미 유튜브 채널 구독하기, 매주 월요일 콘텐츠 업데이트">
+            <img src="./images/banner02_img01.png" alt="당일 발송 (19시 까지)">
+            <img src="./images/quick03.png" alt="실시간 카톡 상담하기">
+            <img src="./images/quick02.png" alt="실시간 네이버톡 상담하기">
+            <img src="./images/qucik_topinfo.jpg" alt="24시간 내 도착, 오후 7시 이전 주문 시 당일 발송"><br>
+            <img src="./images/common_cart02.png" alt="장바구니">
+            <img src="./images/common_menu.png" alt="메뉴">
+            <img src="./images/common_my.png" alt="마이페이지">
+            <img src="./images/common_search.png" alt="검색">
+            <img src="./images/detail_icon_wish.png" alt="위시리스트">
+        </div>
+
+        <hr>
+
+        <h1>동영상 태그</h1>
+        <p>동영상 태그 video는 블록 태그로 블록과 형제 관계여야 함</p>
+        <p>브라우저 별로 호환되는 확장자를 주의하며 동영상 연결</p>
+        <p>동영상 태그의 주요 속성 종류와 뜻</p>
+        <p>* autoplay : 자동 재생</p>
+        <p>* muted : 음소거</p>
+        <p>* controls : 동영상 컨트롤러 보이기</p>
+        <p>* loop : 동영상 반복 설정</p>
+        <video src="./video/coffee.mp4" autoplay muted controls loop></video>
+        <video src="./video/coffee.mp4" muted controls loop poster="./images/aoa_banner.jpg"></video>
+        <video src="./video/cat.mp4" autoplay muted controls loop poster="#"></video>
+        <video src="./video/forest.mp4" autoplay muted controls loop poster="#"></video>
+
+        <hr>
+
+        <iframe width="390" height="693" src="https://www.youtube.com/embed/w77ur-sY7fM?autoplay=1&mute=1&loop=1&playlist=w77ur-sY7fM" title="키보드 뽑는게 취미인 왕관 앵무 사랑이" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="693" height="390" src="https://www.youtube.com/embed/S2GAcCfUsdY?autoplay=1&mute=1&loop=1&playlist=S2GAcCfUsdY" title="&quot;아이들 어떡해!&quot; 불 보자마자 각 반으로 흩어져 구출한 교사들, 냅다 안고 뛴 시민들 (현장영상) / SBS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="693" height="480" src="https://www.youtube.com/embed/c6PeWqj-moU?autoplay=1&mute=1&loop=1&playlist=c6PeWqj-moU" title="MARK 마크 &#39;1999&#39; MV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </body>
+</html>
