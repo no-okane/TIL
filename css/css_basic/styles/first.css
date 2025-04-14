@@ -1,0 +1,7 @@
+body {background-color: skyblue;}
+
+.title {}
+.title h1 {background-color: rgba(0,0,0,0.5);}
+.title #name {color: brown;}
+.title h2 {}
+.title .cls {}

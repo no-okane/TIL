@@ -159,13 +159,33 @@
 -> 대부분은 이렇게 쓰는 게 더 자연스럽고 문제 없음: `<p><a href="#">여기에 링크 걸기</a></p>`
 -----
 ## 2025-04-11 : html(7)
-* gnb(global navigation bar) : 사이트 최상단 내비게이션, 어떤 페이지에 들어가도 고정되어있는 주 메뉴
-* lnb(local navigation bar) : gnb의 하단에 배치된 서브 메뉴, 중분류 메뉴 <br>
+* **gnb(global navigation bar)** : 사이트 최상단 내비게이션, 어떤 페이지에 들어가도 고정되어있는 주 메뉴
+* **lnb(local navigation bar)** : gnb의 하단에 배치된 서브 메뉴, 중분류 메뉴 <br>
 -> 알파벳 순서 (g가 먼저, l이 나중)로 외움 : gnb가 최상단, lnb가 그 다음
-* snb(side navigation bar) : 페이지 내에 좌/우측에 일반적으로 존재하는 추가 메뉴, 서브메뉴X
-* fnb(footer navigation bar) : 사이트 최하단 내비게이션, footer영역에 존재하는 회사소개, 저작권 등의 보조메뉴
-* BreadCrumbs(브레드크럼) : 서브페이지에 표시된 현재 페이지 경로(헨젤과 그레텔의 집을 찾아가기 위해 길에 빵부스러기를 버린 예시)
+* **snb(side navigation bar)** : 페이지 내에 좌/우측에 일반적으로 존재하는 추가 메뉴, 서브메뉴X
+* **fnb(footer navigation bar)** : 사이트 최하단 내비게이션, footer영역에 존재하는 회사소개, 저작권 등의 보조메뉴
+* **BreadCrumbs(브레드크럼)** : 서브페이지에 표시된 현재 페이지 경로(헨젤과 그레텔의 집을 찾아가기 위해 길에 빵부스러기를 버린 예시)
 * 위의 것들은 ul, ol 등의 목록 태그에서 클래스명으로 쓰임
+-----
+## 2025-04-14
+* **css** (cascading style sheets) : 사용자에게 시각적으로 보이는 문서를 꾸미는 언어
+* 단계별로 적용 디자인
+-----
+* css selector : 선택자 {속성:값;}
+* 선택자 : css로 디자인하고자하는 대상
+* {} : 속성과 값을 묶어주는 css 디자인 괄호
+* 속성 : 선택자에 적용하는 속성
+* ; : 속성 값 종료
+* 속성 : color 글자색, background-color 배경색
+-----
+* 내부 스타일 : `<head>` 태그 내에 `<style>`태그로 작성
+* 외부스타일 : 별도의 css 파일을 생성하여 `<link>`태그로 연결하는 방법<br>
+-> `<link>`태그는  `<head>` 태그 내에 작성
+-> `<link href="./styles/first.css" rel="stylesheet">`
+* html 내부에 작성하는 css는 해당 html파일에만 종속되어 외부 html 에 연결할 수 없으므로 효율적이지 못함<br>
+-> 따라서 외부스타일이 더 많이 사용됨
+-----
+* Cross-Browsing :  internet browser간의 호환성을 뜻함
 -----
 ## 2025-
 -----

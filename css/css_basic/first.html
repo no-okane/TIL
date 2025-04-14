@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+
+    <title>외부 스타일 시트 연결한 html</title>
+
+    <!-- 스타일 시트는 헤드 안에 -->
+    <!-- 내부 스타일 시트 작성 시 : <style></style> -->
+    <!-- 외부 스타일 시트 작성 시 : <link> -->
+    <link href="./styles/first.css" rel="stylesheet">
+</head>
+
+<!-- css 연결되는데 적용 및 노출 안 됨 -->
+<body>
+    <div class="title">
+        <h1>외부 스타일</h1>
+        <h2 class="cls" id="name">선택자 우선 순위</h2>
+        <!-- css 적용 노출 우선 순위 : inline(태그 안에 스타일 작성하는 경우) > id > class > tag -->
+        <!-- 자바 스크립트에서 css 명령 시 inline 구조로 자동 삽입, 결과적으로 자바스크립트에서 명령한 css가 가장 우선순위 높게 설정 -->
+        
+    </div>
+</body>
+</html>
