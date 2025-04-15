@@ -10,12 +10,12 @@
 * `take/` : 과제 제출 폴더, 파일 모음 (폴더 명은 날짜 별로 구성)
 * `README.md` : 배운 내용 기록, 어려운 점 및 막힌 점 자유롭게 기록
 -----
-# 웹폰트 코드
+## 웹폰트 코드
 * 구글 폰트 : https://fonts.google.com/?lang=ko_Kore
 * 프리텐다드 : `<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />`
 * 노토 산스 : `<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">`
 -----
-# 웹폰트 사이즈 (px to em) 단위 변환 사이트
+## 웹폰트 사이즈 (px to em) 단위 변환 사이트
 * https://nekocalc.com/px-to-em-converter
 -----
 ## 2025-04-04 : HTML(3)
@@ -69,62 +69,62 @@
 -----
 ## 2025-04-08 : HTML(5)
 * 상대 경로 : 경로를 작성하는 파일 기준으로 연결하는 파일의 위치 작성
-* 파일 위치 같을 때 :  `./파일명/확장자`<br>
-* -> `<a href=”./파일명.확장자”>파일 이동</a>`<br>
-* -> `<a href="./link.css">link css 이동</a>`
-* 파일 위치 다를 때 - 하위 위치 경로 : `./폴더명/파일명.확장자`<br>
-* -> `<a href=”./폴더명/파일명.확장자”>파일 이동</a>` <br>
-* -> `<a href="./styles/link.css">link css 이동</a>`
-* 파일 위치 다를 때 - 상위 위치 경로 : `../파일명.확장자`<br>
--> `<a href="../파일명.확장자">파일 이동</a>`<br>
--> `<a href="../link.css">link css 이동</a>`
+* 파일 위치 같을 때 :  `./파일명/확장자`
+> -> `<a href=”./파일명.확장자”>파일 이동</a>`
+> -> `<a href="./link.css">link css 이동</a>`
+* 파일 위치 다를 때 - 하위 위치 경로 : `./폴더명/파일명.확장자`
+> -> `<a href=”./폴더명/파일명.확장자”>파일 이동</a>` 
+> -> `<a href="./styles/link.css">link css 이동</a>`
+* 파일 위치 다를 때 - 상위 위치 경로 : `../파일명.확장자`
+>-> `<a href="../파일명.확장자">파일 이동</a>`
+>-> `<a href="../link.css">link css 이동</a>`
 * 상대 경로 준비 되어 있지 않을 때는 `#`으로 임시 링크를 걸어둠
 ### 바로가기 링크 만들기
 0. 화면이 수직으로 충분히 이동할 수 있을만큼 긴 세로 스크롤 준비
 1. 바로 가기 할 메뉴에 `a` 태그 작성
 2. 바로가기 할 곳 `div`그룹 상위에 `<div id="아이디명"><div>` 설정
-3. 1번 바로가기 메뉴 `a` 태그에 속성 `href` 값으로 2번 이름 `아이디명` 작성<br>
--> `<a href="link"></a>` 태그 중 링크에 `#아이디명`입력<br>
--> `href`에 `#`만 있으면 임시 링크이지만 `#아이디명`이 되면 `#`이 `id`를 대체, 아이디명으로 바로가기 링크가 됨
+3. 1번 바로가기 메뉴 `a` 태그에 속성 `href` 값으로 2번 이름 `아이디명` 작성
+>-> `<a href="link"></a>` 태그 중 링크에 `#아이디명`입력
+>-> `href`에 `#`만 있으면 임시 링크이지만 `#아이디명`이 되면 `#`이 `id`를 대체, 아이디명으로 바로가기 링크가 됨
 4. 최종 바로가기 링크 : `<a href="#아이디명"></a>`
--> 바로 가기 링크는 같은 파일 내 다른 위치로 이동
+>-> 바로 가기 링크는 같은 파일 내 다른 위치로 이동
 ### 응용
-* `<a href="./basic/index.html#main">이동 하기</a>`<br>
--> 상대 경로의 파일(문서)에서 아이디 main으로 이동
+* `<a href="./basic/index.html#main">이동 하기</a>`
+>-> 상대 경로의 파일(문서)에서 아이디 main으로 이동
 * 파비콘 공통 코드
-`<link rel="shortcut icon" href="파비콘.ico 경로" type="image/x-icon">`
-`<link rel="icon" href="파비콘.ico 경로" type="image/x-icon">`
+>`<link rel="shortcut icon" href="파비콘.ico 경로" type="image/x-icon">`
+>`<link rel="icon" href="파비콘.ico 경로" type="image/x-icon">`
 -----
 ## 2025-04-09 : HTML(6)
-* `<img>` : 이미지 태그(인라인, 빈 태그)<br>
--> `<img src="이미지 주소, 경로">`
+* `<img>` : 이미지 태그(인라인, 빈 태그)
+> -> `<img src="이미지 주소, 경로">`
 * 대체 텍스트 `alt`필수 작성 (의미 없는 이미지에는 값 안 써도 됨)
 * `<img src="url" alt="대체 텍스트>` 
 * src 이미지 경로 속성의 값으로는 상대 경로 방식으로 작성 권장
 * `<video></video>` : 동영상 태그 (블록 태그)
 * 작성 방법 1. `<video src="동영상 경로, 주소"></video>`
-* 작성 방법 2. `<video><source src="동영상 경로, 주소" type="동영상 타입1"><source src="동영상 경로, 주소" type="동영상 타입2"></video>`<br>
--> 브라우저에서 동영상 재생 될 수 있는 타입을 선택해서 자동으로 재생됨, 1번 방식을 더 자주 씀
+* 작성 방법 2. `<video><source src="동영상 경로, 주소" type="동영상 타입1"><source src="동영상 경로, 주소" type="동영상 타입2"></video>`
+>-> 브라우저에서 동영상 재생 될 수 있는 타입을 선택해서 자동으로 재생됨, 1번 방식을 더 자주 씀
 * 동영상 태그의 주요 속성 종류와 뜻
-- autoplay : 자동 재생
-- muted : 음소거
-- controls : 동영상 컨트롤러 보이기
-- loop : 동영상 반복 설정<br>
--> `<video src="동영상 경로, 주소" autoplay muted controls loop></video>`
+> - autoplay : 자동 재생
+> - muted : 음소거
+> - controls : 동영상 컨트롤러 보이기
+> - loop : 동영상 반복 설정
+>-> `<video src="동영상 경로, 주소" autoplay muted controls loop></video>`
 * `autoplay` 사용 시, `muted` 필수
 * `poster=""` 동영상에 썸네일 (미리보기) 기능, autoplay 불가
--> `<video src="동영상 경로, 주소" muted controls loop poster="이미지 경로, 주소"></video>`
+>-> `<video src="동영상 경로, 주소" muted controls loop poster="이미지 경로, 주소"></video>`
 * 이미지와 영상은 임시 링크 `#` 사용 불가
 ### 유튜브에서 영상 가져왔을 때 자동 재생하게 만드는 법
 1. 유튜브에서 영상 소스 코드 복사
 2. `ifram` 형태의 소스 코드 붙여넣기
 3. `<ifram>` 속성 `src=""`에서 마지막 따옴표 직전에 `?autoplay=1&mute=1&loop=1&playlist=영상 이름` 입력
-4. 3에서 영상 이름은 src 값에서 embed의 뒤에 있는 코드<br>
--> `유튜브닷컴/embed/영상 이름`
+4. 3에서 영상 이름은 src 값에서 embed의 뒤에 있는 코드
+>-> `유튜브닷컴/embed/영상 이름`
 * `<ol><li></li></ol>` : 순서가 있는 목록 태그 (블록 태그)
 * `<li></li>` 2개 이상의 목록
-* `<ol></ol>` 목록을 묶는 그룹 태그, 순서가 있는 목록 태그, 목록의 div격 <br>
--> o를 one(1)으로, 숫자 목록 태그라고 외우면 편함
+* `<ol></ol>` 목록을 묶는 그룹 태그, 순서가 있는 목록 태그, 목록의 div격
+>-> o를 one(1)으로, 숫자 목록 태그라고 외우면 편함
 * `<li>`의 형제는 `<li>`만 가능, 다른 태그 쓸 때는 자식 태그로 작성
 * `<ol>` 태그는 반드시 `<li>` 태그의 가장 근접한 부모 태그로 작성
 * `<ol>`은 그룹이므로 `class=""` 작성
@@ -147,13 +147,13 @@
 -----
 * 집에서 공부한 내용 (퀴즈가 납득 안 됨)
 1. p태그는 ul태그보다 우선 순위가 낮다?
-2. p태그는 li태그보다 우선 순위가 높다?<br>
--> 문장에서 기준이 분명하고 명료하지 않아 출제가 잘못 되었음
-* 이유 <br>
--> `<p>`, `<ul>`, `<li>` 태그는 전부 HTML에서 블록 레벨 요소<br>
--> `<p>`태그 안에는 "인라인 태그"만 삽입 가능<br>
--> 따라서 `<ul><li><p>OK!</p></li></ul>`로 사용해야 문법적으로 문제가 없음<br>
--> 그러므로 중첩 가능성 기준으로는 ul > li > p 순으로 감싸는 게 가능하고 자연스러움
+2. p태그는 li태그보다 우선 순위가 높다?
+>-> 문장에서 기준이 분명하고 명료하지 않아 출제가 잘못 되었음
+* 이유
+>-> `<p>`, `<ul>`, `<li>` 태그는 전부 HTML에서 블록 레벨 요소
+>-> `<p>`태그 안에는 "인라인 태그"만 삽입 가능
+>-> 따라서 `<ul><li><p>OK!</p></li></ul>`로 사용해야 문법적으로 문제가 없음
+>-> 그러므로 중첩 가능성 기준으로는 ul > li > p 순으로 감싸는 게 가능하고 자연스러움
 * p와 ul은 블록 태그로 각각 단독으로 쓸 수 있어 우선 순위를 매기는 게 무의미하나, 페이지 내에서 중요도에 초점이 맞춰지면 ul이 우선순위 높을 수도 있음
 * p와 li만 두고 봤을 때 단독으로 쓸 수 있냐 없냐 차이면 p가 우선순위가 높지만, p는 li 안에 속할 수 있으나 li는 p안에 속할 수 없음 -> 이 경우 p는 li보다 우선순위 낮음
 -----
@@ -161,15 +161,15 @@
 * 이유 : `<a>`태그는 인라인 태그로 html5에서 패치되면서 블록 태그의 기능을 할 수 있게 되었으나 어디까지나 정의는 "인라인 태그"임
 * a태그를 블록 태그라고 표현하면 안 됨
 -----
-* `<a>` 태그 안에 `<p>` 태그를 넣는 건 HTML5에서 가능하게 패치된 기능<br>
--> `<a href="#"><p>이제는 이렇게도 쓸 수 있어요!</p></a>` <br>
--> **하지만! 실무에서는 이렇게 쓰는 건 주의가 필요** <br>
--> 대부분은 이렇게 쓰는 게 더 자연스럽고 문제 없음: `<p><a href="#">여기에 링크 걸기</a></p>`
+* `<a>` 태그 안에 `<p>` 태그를 넣는 건 HTML5에서 가능하게 패치된 기능
+>`<a href="#"><p>이제는 이렇게도 쓸 수 있어요!</p></a>` <br>
+>**하지만! 실무에서는 이렇게 쓰는 건 주의가 필요** <br>
+>대부분은 이렇게 쓰는 게 더 자연스럽고 문제 없음: `<p><a href="#">여기에 링크 걸기</a></p>`
 -----
 ## 2025-04-11 : html(7)
 * **gnb(global navigation bar)** : 사이트 최상단 내비게이션, 어떤 페이지에 들어가도 고정되어있는 주 메뉴
-* **lnb(local navigation bar)** : gnb의 하단에 배치된 서브 메뉴, 중분류 메뉴 <br>
--> 알파벳 순서 (g가 먼저, l이 나중)로 외움 : gnb가 최상단, lnb가 그 다음
+* **lnb(local navigation bar)** : gnb의 하단에 배치된 서브 메뉴, 중분류 메뉴
+> -> 알파벳 순서 (g가 먼저, l이 나중)로 외움 : gnb가 최상단, lnb가 그 다음
 * **snb(side navigation bar)** : 페이지 내에 좌/우측에 일반적으로 존재하는 추가 메뉴, 서브메뉴X
 * **fnb(footer navigation bar)** : 사이트 최하단 내비게이션, footer영역에 존재하는 회사소개, 저작권 등의 보조메뉴
 * **BreadCrumbs(브레드크럼)** : 서브페이지에 표시된 현재 페이지 경로(헨젤과 그레텔의 집을 찾아가기 위해 길에 빵부스러기를 버린 예시)
@@ -185,20 +185,20 @@
 * 속성 : 선택자에 적용하는 속성
 * ; : 속성 값 종료
 * 속성 : color 글자색, background-color 배경색
-* 글자 및 배경색 설정 속성은 아래와 같다.<br>
-- `color:rgb(255,255,255);`<br>
-- `color:rgba(255,255,255,0.5);`<br>
-- `color:#ffffff;`<br>
-- `color:#fff;`<br>
-- `color:white;`<br>
--> 보통 rgba, 헥사코드를 많이 사용<br>
--> 헥사코드 사용 시 6자리 모두 같은 숫자 또는 알파벳일 때 3자리로 압축 가능
+* 글자 및 배경색 설정 속성은 아래와 같다.
+>- `color:rgb(255,255,255);`
+>- `color:rgba(255,255,255,0.5);`
+>- `color:#ffffff;`
+>- `color:#fff;`
+>- `color:white;`
+>-> 보통 rgba, 헥사코드를 많이 사용
+>-> 헥사코드 사용 시 6자리 모두 같은 숫자 또는 알파벳일 때 3자리로 압축 가능
 -----
 * 내부 스타일 : `<head>` 태그 내에 `<style>`태그로 작성
-* 외부스타일 : 별도의 css 파일을 생성하여 `<link>`태그로 연결하는 방법<br>
--> `<link>`태그는  `<head>` 태그 내에 작성
--> `<link href="./styles/first.css" rel="stylesheet">`
-* html 내부에 작성하는 css는 해당 html파일에만 종속되어 외부 html 에 연결할 수 없으므로 효율적이지 못함<br>
+* 외부스타일 : 별도의 css 파일을 생성하여 `<link>`태그로 연결하는 방법
+>-> `<link>`태그는  `<head>` 태그 내에 작성
+>-> `<link href="./styles/first.css" rel="stylesheet">`
+* html 내부에 작성하는 css는 해당 html파일에만 종속되어 외부 html 에 연결할 수 없으므로 효율적이지 못함
 -> 따라서 외부스타일이 더 많이 사용됨
 -----
 * Cross-Browsing :  internet browser간의 호환성을 뜻함
@@ -212,59 +212,85 @@
 * **font-weitght (글꼴 굵기)** : `font-weight: 400;`
 * 기본 사이즈는 400, 글꼴마다 적용 가능 정도가 다름
 * **font-size (글자 크기)**
-* 글자 크기 적용 코드는 아래와 같다. <br>
-- `font-size:16px;`<br>
-- `font-size:100%;`<br>
-- `font-size:1.0em;`
+* 글자 크기 적용 코드는 아래와 같다.
+>- `font-size:16px;`
+>- `font-size:100%;`
+>- `font-size:1.0em;`
 * 데스크톱 환경의 글자 내용 크기 16pt, 모바일 태블릿 환경 글자 내용 크기 14pt
 * 픽셀 단위는 절대 크기값으로 사용자별 글자 크기 지원 안 함
 * 픽셀 단위가 아닌 em rem % 상대적 단위 사용해야 함
-* 보통 rem 사용<br>
--> 이유 : em 사이즈를 적용하게 되면 태그에 자식이 있을 때 +@로 추가 적용되기 때문 (글자 크기를 상대적로 인식)<br>
--> 자식은 부모 사이즈+본인사이즈 갖게 됨
+* 보통 rem 사용
+>-> 이유 : em 사이즈를 적용하게 되면 태그에 자식이 있을 때 +@로 추가 적용되기 때문 (글자 크기를 상대적로 인식)
+>-> 자식은 부모 사이즈+본인사이즈 갖게 됨
 * 사이트에서 글꼴 사이즈를 px->em 단위 변환하여 em을 rem(부모 글자 크기 관계 없이 절대적으로 인식)으로 하면 해결 완료
 * **line-height (행간)**
-* 글자 행간 적용 코드는 아래와 같다.<br>
-- `line-height:1.5;`<br>
-- `line-height:150%;`<br>
-- `line-height:150px;`
+* 글자 행간 적용 코드는 아래와 같다
+>- `line-height:1.5;`
+>- `line-height:150%;`
+>- `line-height:150px;`
 * 디자인 상황에 따라 px과 % 유동적으로 사용
 * line-height를 이용한 수직 정렬 주의사항
 * 요소의 height 값이 px로 작성된 경우 그 값을 그대로 line-height의 px값으로 작성하여 수직 가운데 정렬을 적용
 * 단, 글자가 2줄 이상일 경우에는 적용 금지 -> 무조건 1줄 일 때만 사용 
 * **letter-spacing (자간)**
 * 자간 적용 코드는 아래와 같다.
-- letter-spacing:0;
-- letter-spacing:-0.5px;
-- letter-spacing:-0.05em;
+>- letter-spacing:0;
+>- letter-spacing:-0.5px;
+>- letter-spacing:-0.05em;
 * 자간과 행간은 디자인 프로그램 상 보이는 것과 코딩 시 보이는 것이 미세한 차이 발생할 수 있음
 * 주로 em 사용
 * 기본값 : 0
 * -0.02em = 피그마 -2%
 * **word-spacing 단어와 단어 사이 간격**
 * 적용 코드는 아래와 같다.
-- word-spacing:1px;
-- word-spacing:-0.05em;
+>- word-spacing:1px;
+>- word-spacing:-0.05em;
 * 주로 em 사용
 * 기본값 : 0
 * css 크기 속성 : `width: 200px; height: 200px;`
 * **css 글자 정렬** : `text-align: center(orleft, right);`
-* text-align 속성은 속성 값을 입력한 대상 기준으로 그 자식 또는 자손이 인라인 요소일 경우에만 적용<br>
-→ 단순 글자도 인라인으로 인식하기 때문
+* text-align 속성은 속성 값을 입력한 대상 기준으로 그 자식 또는 자손이 인라인 요소일 경우에만 적용
+>→ 단순 글자도 인라인으로 인식하기 때문
 -----
 * `display: inline-block;` : a태그를 css 속성을 이용하여 크기를 인식하는 블럭으로 변환
 * `border-radius: 30px;` : 박스에 모서리 라운드, 모서리마다 따로 라운드 줄 수 있음
 * `list-style-type: ;` : 목록 머리 기호
-- none : 지정하지 않음
-- disc : 검은 원형
-- lower-roman : 소문자 로마자
-- decimal : 1부터 시작하는 10진수
-- upper-alpha : 대문자 알파벳
-- circle : 원형
-- square : 사각형
-- lower-alpha : 소문자 알파벳
-- upper-roman : 대문자 로마자
+    - none : 지정하지 않음
+    - disc : 검은 원형
+    - lower-roman : 소문자 로마자
+    - decimal : 1부터 시작하는 10진수
+    - upper-alpha : 대문자 알파벳
+    - circle : 원형
+    - square : 사각형
+    - lower-alpha : 소문자 알파벳
+    - upper-roman : 대문자 로마자
 * `list-style-position: inside or outside;` : 글머리 기호의 위치
-* `margin-left: auto;`, `margin-right: auto;` : 가운데 정렬 글자 가운데에 배치하고 싶을 때 둘 다 적용
+* `width: <width>`,`margin-left: auto;`, `margin-right: auto;` : 가운데 정렬 글자 가운데에 배치하고 싶을 때 둘 다 적용
+-----
+### css style sheet
+* 외부 스타일 시트 파일 저장 **styles**폴더에 `파일명.css`저장
+* css 파일 생성 후 css 연결 원하는 html파일 head위치에 `<link>`태그로 연결
+* html 작성 후 html의 모든 디자인 설정을 초기화하는 `reset.css`을 `파일명.css` 위에 연결
+* 웹글꼴 연결 시 html 파일에 `<link>`태그로 `파일명.css` 위에 연결
+### head 태그 내에 들어가는 link 태그 작성 순서
+1. 웹글꼴 포함 기타 플러그인 연결
+2. reset.css
+3. 해당 html별 디자인.css
+### 디자인 css 작성 시 순서 및 주의사항
+* **부모 > 자식** 순서로 가장 바깥쪽 부모부터 먼저 선택자를 만들고 디자인
+* 레이아웃 관련 요소에 `width, height` 속성 작성 시 영역 확인을 위한 `background-color`를 꼭 함께 작성해서 정확히 구분 -> 이때 색상은 쉬운 영역 구분을 위한 `aqua, lime, yellow, pink` 등의 밝은 색상 위주로 사용하고 영역 확인과 디자인 작업을 모두 마친 후 `background-color` 제거, 마무리
+* 실제 디자인에 들어가는 색상은 **rgba 또는 헥사코드**로 입력하고 테스트용으로 입력하는 임시 색상은 영문명으로 입력
+### 자주 이용하는 css 속성 값과 기본값
+* `color` : 글꼴 색 -> `color:black;`
+* `background-color` : 바탕색 -> `background-color:black;`
+* `font-family` : 메인 글꼴 설정 -> `font family:'굴림', sans-serif;`
+* `font-size` : 글꼴 크기 설정 / 기본 1rem(16pt) -> `font-size:1.5rem;`
+* `font-weight` : 글꼴 굵기 설정 / 기본 400 -> `font-weight:800;`
+* `letter-spcing` : 자간 설정 / 기본 0rem -> `letter-spacing:0.2rem;`
+* `line-height` : 줄간격 설정 / 기본 100% -> `line-height:150%;`
+* `width` : 가로 사이즈 -> `width:300px;`
+* `hieght` : 세로 사이즈 -> `hieght:150px;`
+* `margin` : 여백 -> `margin:20px;`
+* `border-radius` : 모서리 둥글게 -> `border-radius:30px;`
 -----
 ## 2025-0
