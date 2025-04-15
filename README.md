@@ -10,6 +10,14 @@
 * `take/` : 과제 제출 폴더, 파일 모음 (폴더 명은 날짜 별로 구성)
 * `README.md` : 배운 내용 기록, 어려운 점 및 막힌 점 자유롭게 기록
 -----
+# 웹폰트 코드
+* 구글 폰트 : https://fonts.google.com/?lang=ko_Kore
+* 프리텐다드 : `<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />`
+* 노토 산스 : `<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">`
+-----
+# 웹폰트 사이즈 (px to em) 단위 변환 사이트
+* https://nekocalc.com/px-to-em-converter
+-----
 ## 2025-04-04 : HTML(3)
 * `h1~h6`, `p`, `br`, `strong`, `em`, `del`, `s`, `sup`, `sub`
 * `<blockquote></blockquote>`: 긴 인용문 태그
@@ -167,7 +175,7 @@
 * **BreadCrumbs(브레드크럼)** : 서브페이지에 표시된 현재 페이지 경로(헨젤과 그레텔의 집을 찾아가기 위해 길에 빵부스러기를 버린 예시)
 * 위의 것들은 ul, ol 등의 목록 태그에서 클래스명으로 쓰임
 -----
-## 2025-04-14
+## 2025-04-14 : CSS(1)
 * **css** (cascading style sheets) : 사용자에게 시각적으로 보이는 문서를 꾸미는 언어
 * 단계별로 적용 디자인
 -----
@@ -177,6 +185,14 @@
 * 속성 : 선택자에 적용하는 속성
 * ; : 속성 값 종료
 * 속성 : color 글자색, background-color 배경색
+* 글자 및 배경색 설정 속성은 아래와 같다.<br>
+- `color:rgb(255,255,255);`<br>
+- `color:rgba(255,255,255,0.5);`<br>
+- `color:#ffffff;`<br>
+- `color:#fff;`<br>
+- `color:white;`<br>
+-> 보통 rgba, 헥사코드를 많이 사용<br>
+-> 헥사코드 사용 시 6자리 모두 같은 숫자 또는 알파벳일 때 3자리로 압축 가능
 -----
 * 내부 스타일 : `<head>` 태그 내에 `<style>`태그로 작성
 * 외부스타일 : 별도의 css 파일을 생성하여 `<link>`태그로 연결하는 방법<br>
@@ -187,5 +203,68 @@
 -----
 * Cross-Browsing :  internet browser간의 호환성을 뜻함
 -----
-## 2025-
+## 2025-04-15 : CSS(2)
+* **font-family (글꼴 지정)** : `font-family:dotum, gulim, '맑은 고딕', sans-serif;`
+* 가장 첫번째 위치에 오는 글꼴이 메인 글꼴이고 그 뒤에 따라오는 글꼴은 메인 글꼴 적용되지 않는 상황에서 사용하는 후보 글꼴 
+글꼴명이 한글 또는 공백이 포함되었을 경우(영문 폰트 포함) 따옴표 사용
+* 폰트 유형에 따라 마지막에 sans-serif 또는 serif 입력
+* 웹폰트 사용 시 html 헤드 부분에 스타일 시트처럼 웹글꼴 연결해야 적용 됨
+* **font-weitght (글꼴 굵기)** : `font-weight: 400;`
+* 기본 사이즈는 400, 글꼴마다 적용 가능 정도가 다름
+* **font-size (글자 크기)**
+* 글자 크기 적용 코드는 아래와 같다. <br>
+- `font-size:16px;`<br>
+- `font-size:100%;`<br>
+- `font-size:1.0em;`
+* 데스크톱 환경의 글자 내용 크기 16pt, 모바일 태블릿 환경 글자 내용 크기 14pt
+* 픽셀 단위는 절대 크기값으로 사용자별 글자 크기 지원 안 함
+* 픽셀 단위가 아닌 em rem % 상대적 단위 사용해야 함
+* 보통 rem 사용<br>
+-> 이유 : em 사이즈를 적용하게 되면 태그에 자식이 있을 때 +@로 추가 적용되기 때문 (글자 크기를 상대적로 인식)<br>
+-> 자식은 부모 사이즈+본인사이즈 갖게 됨
+* 사이트에서 글꼴 사이즈를 px->em 단위 변환하여 em을 rem(부모 글자 크기 관계 없이 절대적으로 인식)으로 하면 해결 완료
+* **line-height (행간)**
+* 글자 행간 적용 코드는 아래와 같다.<br>
+- `line-height:1.5;`<br>
+- `line-height:150%;`<br>
+- `line-height:150px;`
+* 디자인 상황에 따라 px과 % 유동적으로 사용
+* line-height를 이용한 수직 정렬 주의사항
+* 요소의 height 값이 px로 작성된 경우 그 값을 그대로 line-height의 px값으로 작성하여 수직 가운데 정렬을 적용
+* 단, 글자가 2줄 이상일 경우에는 적용 금지 -> 무조건 1줄 일 때만 사용 
+* **letter-spacing (자간)**
+* 자간 적용 코드는 아래와 같다.
+- letter-spacing:0;
+- letter-spacing:-0.5px;
+- letter-spacing:-0.05em;
+* 자간과 행간은 디자인 프로그램 상 보이는 것과 코딩 시 보이는 것이 미세한 차이 발생할 수 있음
+* 주로 em 사용
+* 기본값 : 0
+* -0.02em = 피그마 -2%
+* **word-spacing 단어와 단어 사이 간격**
+* 적용 코드는 아래와 같다.
+- word-spacing:1px;
+- word-spacing:-0.05em;
+* 주로 em 사용
+* 기본값 : 0
+* css 크기 속성 : `width: 200px; height: 200px;`
+* **css 글자 정렬** : `text-align: center(orleft, right);`
+* text-align 속성은 속성 값을 입력한 대상 기준으로 그 자식 또는 자손이 인라인 요소일 경우에만 적용<br>
+→ 단순 글자도 인라인으로 인식하기 때문
 -----
+* `display: inline-block;` : a태그를 css 속성을 이용하여 크기를 인식하는 블럭으로 변환
+* `border-radius: 30px;` : 박스에 모서리 라운드, 모서리마다 따로 라운드 줄 수 있음
+* `list-style-type: ;` : 목록 머리 기호
+- none : 지정하지 않음
+- disc : 검은 원형
+- lower-roman : 소문자 로마자
+- decimal : 1부터 시작하는 10진수
+- upper-alpha : 대문자 알파벳
+- circle : 원형
+- square : 사각형
+- lower-alpha : 소문자 알파벳
+- upper-roman : 대문자 로마자
+* `list-style-position: inside or outside;` : 글머리 기호의 위치
+* `margin-left: auto;`, `margin-right: auto;` : 가운데 정렬 글자 가운데에 배치하고 싶을 때 둘 다 적용
+-----
+## 2025-0

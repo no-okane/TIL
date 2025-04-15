@@ -1,0 +1,11 @@
+/* reset.css */
+html, body, h1, h2, h3, h4, h5, h6, p, div, dl, dt, dd, ul, ol, li, blockquote, address, video, header, footer, hr, a, span, em, del, img, br, code, q, sup, sub, s, strong {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}

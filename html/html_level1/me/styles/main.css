@@ -1,15 +1,72 @@
-#mobile_wrap {background-color: #4000FF;}
+#mobile_wrap {
+    background-color: #4000FF;
+    width: 440px; height: 956px;
+    text-align: center;
+    font-family: "pretendard", sans-serif;
+    letter-spacing: -0.02rem;
+    font-weight: 400;
+}
 
-#mobile_wrap .photo {}
+#mobile_wrap .photo {
+    display: inline-block;
+    margin-top: 125px;
+    margin-bottom: 30px;
+}
 #mobile_wrap .photo img {}
-#mobile_wrap h1 {color: #fff;}
-#mobile_wrap h1 span {color: #00FF73;}
+#mobile_wrap h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 150%;
+    margin-bottom: 30px;
+}
+#mobile_wrap h1 span {
+    color: #00FF73;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
 
 #mobile_wrap .introduce {}
-#mobile_wrap .introduce .name_github {}
-#mobile_wrap .introduce .name_github h2 {color: #fff;}
-#mobile_wrap .introduce .name_github .git {color: #fff;}
+#mobile_wrap .introduce .name_github {
+    margin-bottom: 30px;
+}
+#mobile_wrap .introduce .name_github h2 {
+    color: #fff;
+    line-height: 150%;
+    
+    width: 199px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+#mobile_wrap .introduce .name_github .git {
+    color: #fff;
+    line-height: 150%;
+    letter-spacing: -0.02rem;
 
-#mobile_wrap .introduce .skill {color: #fff;}
-#mobile_wrap .introduce .skill dt {}
-#mobile_wrap .introduce .skill dd {}
+    width: 199px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#mobile_wrap .introduce .skill {
+    width: 199px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+#mobile_wrap .introduce .skill dt {
+    color: #fff;
+    line-height: 150%;
+    
+}
+#mobile_wrap .introduce .skill dd::marker {
+    font-size: 0.5rem;
+}
+#mobile_wrap .introduce .skill dd {
+    display: list-item;
+    list-style-position : inside;
+    line-height: 150%;
+    color: #fff;
+    margin-left: 5px;
+}
