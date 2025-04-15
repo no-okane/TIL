@@ -1,20 +1,20 @@
 body {}
 
 #weather {}
-#weather h1 {color: orange; background-color: lightcoral;}
-#weather .area {color: yellow; background-color: lightcyan;}
-#weather .temperature {color: green; background-color: lightgoldenrodyellow;}
-#weather .temperature+p {color: blue; background-color: lightgray;}
-#weather p+.sub_title {color: navy; background-color: lightgreen;}
-#weather .humidity {color: purple; background-color: lightgrey;}
-#weather .humidity+.sub_title {color: red; background-color: lightblue;}
-#weather .dust {color: orange; background-color: lightcoral;}
-#weather .result {color: yellow; background-color: lightcyan;}
+#weather h1 {}
+#weather .area {}
+#weather .temperature {}
+#weather .temperature+p {}
+#weather .sub_title {}
+#weather .humidity {}
+#weather .humidity+.sub_title {}
+#weather .dust {}
+#weather .result {}
 
 #news {}
-#news > a {color: blue; background-color: lightgray;}
+#news a {}
 #news .box {}
-#news .box a h2 {color: purple; background-color: lightgrey;}
-#news .box a p {color: red; background-color: lightblue;}
-#news > p {color: orange; background-color: lightcoral;}
-#news > p span {color: yellow; background-color: lightcyan;}
+#news .box a h2 {}
+#news .box a p {}
+#news p {}
+#news p span {}
