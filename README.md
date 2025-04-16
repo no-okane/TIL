@@ -336,6 +336,84 @@
     * 시간의 특정 지점 또는 구간
     * datetime 속성 : 요소의 시간 또는 날짜 값
     * datetime 속성을 지정해 보다 적절한 검색 결과나, 알림 같은 특정 기능을 구현할 때 사용
+* `<form></from>` : 사용자 입력, 선택 컨트롤 묶음 틀
+    * ex) `<form action="#" method="post" id="join_frm"></form>`
+    * 블럭 태그
+    * action
+        * 사용자가 입력 선택한 데이터 전송하는 서버
+        * 값에 서버주소 입력
+    * method : 데이터 전송 시 전송방법
+        * post : 폼 데이터를 http 본문에 포함하여 서버 전송 - 보안 높음
+        * get : 폼 데이터를 url에 추가해 서버로 전송 - 보안 낮음
+* `<fieldset></fieldset>` : 전체 폼 태그 안 그룹이 필요할 경우 작성
+    * 폼의 양식을 더 읽기 쉽고 이해하기 편하게 구성하려는 목적
+    * form의 자식 요소로 배치
+    * 블럭 태그
+* `<legend></legend>` : 그룹 제목, 데이터 구분 목적
+    * 인라인 태그
+    * fieldset의 자식으로 배치
+    * 실제 디자인은 css로 숨김
+     * `legend {display: none;} `
+     * reset.css에 등록
+* input : 입력/선택 컨트롤 양식
+    * 인라인 태그, 빈태그
+    * 속성은 입력양식 / 선택&목록 컨트롤 양식 종류에 따라 의미가 달라짐
+        * 입력 양식 속성
+            * type : 인풋 요소가 나타낼 입력 필드 종류
+                * text : 한줄 입력
+                * file : 파일 첨부
+                * password : 입력 보안
+                * number : 숫자
+                * email : 이메일
+                * search : 검색어
+                * date
+                * time : 시간입력
+                * url
+                * tel : 전화번호
+                * week : 날짜입력(시간x)
+                * hidden : 서버로 전송되는 숨김영역의 값
+            * textarea : 여러줄의 텍스트를 입력할 수 있는 입력 필드
+                * **인풋 작성 필요 없음**
+                * name :  요소 이름
+                * value : 요소 초기값 
+                *  rows : 요소 세로 크기 지정
+                *  cols : 요소 가로 크기 지정
+                *  disabled : 요소 비활성화
+                *  placeholder : 요소 입력 텍스트 지정
+                *  required : 필수 입력 처리
+                *  form : 요소가 속한 폼
+            * name : 인풋 요소이 이름 지정 (데이터 구분)
+            * value : 인풋 요소의 초기값
+            * size : 크기, 보통 css로 조정
+            * maxlength : 글자 수 제한
+            * required : 필수 입력 필드 지정
+            * readonly : 읽기 전용
+            * disabled : 필드 비활성화
+            * autocomplete : 자동 완성 기능, 값은 on/off로 작성
+            * accept : 요소에서 허용하는 파일 형식 지정
+                * `accept=“img/png, application/pdf, img/*”`
+            * multiple : 입력 필드에 여러 이름 입력 시 각 개별 값 처리
+            *  placeholder : 요소 입력 텍스트 지정
+        * 선택&목록 양식 속성
+            *  type : 요소가 나타낼 타입
+                * checkbox : 다중 선택
+                * radio : 단일 선택
+            * select : 목록(option)을 묶어주는 부모 대상
+                * option은 select의 자식으로 목록을 의미
+            * name : 요소의 이름 지정 같은 선택에 포함될 경우 동일한 이름 처리, 그룹명
+            * value : 요소의 고유 초기값 지정
+    * label : 글자와 함께 배치된 형태의 input 작업 시 입력, 선택 필드의 편의성, 접근성을 높이기 위해 사용하는 태그
+        * 인라인 태그
+        * 모든 input에 사용 가능하나 일반적으로 checkbox, radio에서 편의성 목적으로 많이 사용
+        * input의 부모로 감싸거나 형제 요소로 사용 가능
+        * 연결하려는 input이 가진 id 명(input의 value와 id 값 같음)과 동일한 값을 label의 for 속성 값으로 입력
+    *  버튼 요소 : reset, submit, button
+        * 인라인 태그
+        * 컨트롤 양식들을 입력 후 최종 전송 형태를 결정할 때 사용
+        * 컨트롤 양식 전송할 경우 submit
+        * 컨트롤 양식 초기화할 경우 reset
+        * 다양한 용도의 범용 버튼으로 사용 시 button을 사용
+        * input type 속성 값으로 시작하는 방법과 button 태그를 입력하는 방법으로 나뉨
 -----
 ## 2025-
 -----
