@@ -60,13 +60,11 @@
     line-height: 150%;
     
 }
-#mobile_wrap .introduce .skill dd::marker {
-    font-size: 0.5rem;
-}
+
 #mobile_wrap .introduce .skill dd {
     display: list-item;
     list-style-position : inside;
+    list-style-type: '　·　';
     line-height: 150%;
     color: #fff;
-    margin-left: 5px;
 }
