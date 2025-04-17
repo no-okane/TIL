@@ -234,7 +234,7 @@
 * 내부 스타일 : `<head>` 태그 내에 `<style>`태그로 작성
 * 외부스타일 : 별도의 css 파일을 생성하여 `<link>`태그로 연결하는 방법
     * `<link>`태그는  `<head>` 태그 내에 작성
-    * `<   link href="./styles/first.css" rel="stylesheet">`
+    * `<link href="./styles/first.css" rel="stylesheet">`
 * html 내부에 작성하는 css는 해당 html파일에만 종속되어 외부 html 에 연결할 수 없으므로 효율적이지 못함
     * 따라서 외부스타일이 더 많이 사용됨
 
@@ -380,7 +380,7 @@
     * 문서 `<body>`의 주요 콘텐츠
     * 문서의 핵심 주제나 앱의 핵심 기능에 직접적으로 연결됐거나 확장하는 콘텐츠
 * `<figure> <img src=”” alt=””><figcaption>설명</figcaption> </figure>`
-    * 미지와 그에 대한 설명을 표현 할 때 묶음(figure) 설명(figcaption)순으로 사용
+    * 이미지와 그에 대한 설명을 표현 할 때 묶음(figure) 설명(figcaption)순으로 사용
     * 블럭 태그
 * `<details> <summary>요약</summary> 내용 </details>`
     * "열림" 상태일 때만 내부 정보를 보여주는 정보 공개 위젯을 생성
@@ -410,7 +410,7 @@
     * fieldset의 자식으로 배치
     * 실제 디자인은 css로 숨김
      * `legend {display: none;} `
-     * reset.css에 등록
+     * `reset.css`에 등록
 * input : 입력/선택 컨트롤 양식
     * 인라인 태그, 빈태그
     * 속성은 입력양식 / 선택&목록 컨트롤 양식 종류에 따라 의미가 달라짐

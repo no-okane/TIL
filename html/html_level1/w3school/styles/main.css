@@ -1,0 +1,95 @@
+/* 전체 그룹 */
+#main_wrap {
+    background-color: #FFf;
+    width: 440px; height: 956px;
+    text-align: left;
+    letter-spacing: -0.02rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 페이지 제목 그룹 */
+#main_wrap .top_wrap {
+    padding-top: 100px;
+    padding-bottom: 257px;
+}
+
+/* 페이지 제목 */
+#main_wrap .top_wrap h1 {
+    color: #FFA500;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#main_wrap .top_wrap p {}
+
+/* 모든 입력, 버튼 그룹 */
+#main_wrap #login_frm {
+    font-size: 0.75rem;
+}
+
+/* 이메일, 패스워드 입력 그룹 */
+#main_wrap #login_frm .email_password {}
+
+/* 공통 입력 */
+#main_wrap #login_frm input {
+    display: block;
+    /* border : 선두께 선모양 선색상; */
+    /* border : 1px solid #000 */
+    border: 1px solid #9D9D9D;
+    border-radius: 5px;
+    width: 410px; height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* 이메일 입력, 패스워드 입력 */
+/* dt 공통 */
+#main_wrap #login_frm .email_password dt {
+    font-size: 1.375rem;/* 22pt */
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+#main_wrap #login_frm .email_password .user_email {}
+#main_wrap #login_frm .email_password .user_pw {}
+
+/* 비번 찾기 그룹 */
+#main_wrap #login_frm .forgot_password {}
+#main_wrap #login_frm .forgot_password dt {
+    font-size: 1.375rem;/* 22pt */
+    font-weight: 600;
+    margin-top: 60px;
+    margin-bottom: 16px;
+}
+#main_wrap #login_frm .forgot_password dd {}
+/* 버튼 공통 */
+#main_wrap #login_frm .forgot_password dd button {
+    width: 410px; height: 40px;
+    line-height: 40px;
+    margin-bottom: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+#main_wrap #login_frm .forgot_password dd #login_btn {
+    background-color: #FFA500;
+    color: #FFf;
+}
+#main_wrap #login_frm .forgot_password dd #with_google_btn {
+    background-color: #FFf;
+    color: #FFA500;
+    border : 1px solid #FFA500;
+    margin-bottom: 67px;
+}
+
+/* 회원가입 제안 */
+#main_wrap .sign_up_proposal {
+    font-size: 0.75rem;
+    text-align: center;
+}
+#main_wrap .sign_up_proposal span {}
+#main_wrap .sign_up_proposal a {
+    color: #FFA500;
+    font-weight: 600;
+}

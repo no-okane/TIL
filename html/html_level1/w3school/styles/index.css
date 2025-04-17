@@ -1,0 +1,52 @@
+/* 배경, 정렬, 화면 크기 그룹 */
+#intro_wrap {
+    background-color: #FFA500;
+    width: 440px; height: 956px;
+    text-align: center;
+    letter-spacing: -0.02rem;
+}
+
+/* 로고 그룹 */
+#intro_wrap h1 {
+    padding-top: 260px;
+    padding-bottom: 156px;
+}
+#intro_wrap h1 img {}
+
+/* 로그인, 회원가입, 비번 찾기 링크 그룹 */
+
+#intro_wrap .btn_wrap {
+    /* 블록의 너비값을 부모보다 작게 설정했을 때 가운데 정렬하고 싶을 경우 */
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#intro_wrap .btn_wrap a {
+    display: block;
+}
+
+/* 로그인 링크 */
+#intro_wrap .btn_wrap .login_btn {
+    font-size: 0.875rem;/* 14px */
+    background-color: #FFDEA2;
+    height: 40px; line-height: 40px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+/* 회원가입 링크 */
+#intro_wrap .btn_wrap .sign_up_btn {
+    font-size: 0.875rem;/* 14px */
+    background-color: #FFf;
+    height: 40px; line-height: 40px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+/* 비번 찾기 링크 */
+#intro_wrap .btn_wrap .forgot_password {
+    color: #FFf; 
+    font-size: 0.75rem;/* 12px */
+    text-align: left;
+}
