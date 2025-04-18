@@ -555,13 +555,6 @@ width: <width>`,`margin-left: auto;`, margin-right: auto;`
             *  cols : 요소 가로 크기 지정
             *  disabled : 요소 비활성화
             *  placeholder : 요소 입력 텍스트 지정
-```
- #main_wrap #login_frm input::placeholder {
-    color: #B3B3B3;
-    font-size: 0.75rem;
-    font-weight: 300;
-}
-```
             *  required : 필수 입력 처리
             *  form : 요소가 속한 폼
         * name : 인풋 요소이 이름 지정 (데이터 구분)
@@ -632,6 +625,15 @@ legend {display: none;}
 input {border: 0; outline: none;}
 button {border: 0; background: none; cursor: pointer;}
 table, tr, th, td {border-collapse: collapse;}
+```
+
+### placeholder 선택자
+```
+ #main_wrap #login_frm input::placeholder {
+    color: #B3B3B3;
+    font-size: 0.75rem;
+    font-weight: 300;
+}
 ```
 
 
