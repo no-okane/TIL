@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 css 연습</title>
+
+    <link href="./styles/reset.css" rel="stylesheet">
+    
+    <style>
+        .box1 {
+            background-color: aqua;
+            text-align: center;
+            /* height: 50px; */
+            /* 부모 태그의 세로 사이즈는 소속된 태그에 맞추기 위해 따로 적지 않음 */
+        }
+        .box1 > * /* box1의 모든 태그 선택 */ {
+            font-size: 3rem;
+            border: 2px solid #000;
+            margin-left: -6px; /* 인라인 블럭에 기본 여백 없애기 위한 시도 */
+        } 
+
+        .box1 h1 {
+            display: inline-block;
+        }
+        .box1 a {
+            display: inline-block;
+            /* display: none; 요소의 위치, 크기 포함 숨기기 */
+            /* 인라인 블럭에는 6픽셀 정도 기본 여백있음 */
+            width: 100px; height: 100px;
+            visibility: visible;/* 동적 애니메이션 처리 시 요소의 자리는 유지하고 숨겨야 하는 경우 주로 사용 */
+        }
+        .box1 + a {
+            width: 50%;
+            height: 100vh;/* viewport height */
+            background-color: lime;
+            display: block;
+        }
+        ul {
+            background-color: yellow;
+            padding: 20px;
+            
+        }
+        ul li {
+            background-color: pink;
+            margin-bottom: 20px;
+            padding : 10px
+        }
+
+        .box2 {
+            background-color: aqua;
+            text-align: right;
+            padding: 50px 100px 200px 0;
+            margin: 150px 0 0 0;
+        }
+        .box2 a {
+            border: 3px dotted red;
+            font-size: 5rem;
+            display: inline-block;
+            /* padding: 50px; 상하좌우 모든값 동일할 때 */
+            /* padding: 50px 100px 200px 0; 상 우 하 좌 값이 각각 다를 때 */
+            /* 상하 / 좌우에 각각 다른 값일 때 : `margin: 10px 20px`, `padding: 10px 20px` */
+            /* 상/좌우/하에 각각 다른 값d일 때 : `margin: 10px 20px 5px`, `padding: 10px 20px 5px` */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h1>h1</h1>
+        <a href="#">a</a>
+    </div>
+    <a href="#">금요일 웹툰 보기</a>
+    <ul>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+    </ul>
+    <div class="box2">
+        <a href="#">link</a>
+    </div>
+
+</body>
+</html>
