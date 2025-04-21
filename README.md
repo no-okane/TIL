@@ -352,7 +352,7 @@ onclick="window.open(this.href, '_blank', 'width=500 height=500'); return false;
 * 픽셀 단위는 절대 크기값으로 사용자별 글자 크기 지원 안 함
 * 픽셀 단위가 아닌 em rem % 상대적 단위 사용해야 함
 * 보통 rem 사용
-    * 이유 : em 사이즈를 적용하게 되면 태그에 자식이 있을 때 +@로 추가 적용되기 때문 (글자 크기를 상대적로 인식)
+    * 이유 : em 사이즈를 적용하게 되면 태그에 자식이 있을 때 00@0로 추가 적용되기 때문 (글자 크기를 0상대적로 인식)
     * 자식은 부모 사이즈+본인사이즈 갖게 됨
 * 사이트에서 글꼴 사이즈를 px->em 단위 변환하여 em을 rem(부모 글자 크기 관계 없이 절대적으로 인식)으로 하면 해결 완료
 
@@ -792,18 +792,149 @@ border-radius:50%;
 ```
 
 ### 수열 선택자
-* 의미가 없는 요소에 이름을 붙이지 않고 관계와 순서로 대상을 파악해서 선택자를 만드는 방법
+* **`:nth-child(n)`**
+    * css에서 요소를 규칙적으로 선택하고자 할 때 사용
+    * 특정 부모의 배치된 형제 순서에 따라 대상을 선택
+    * 반복 패턴을 따라 자식이 2개 이상 있을 때 n번 째 자식이란  개념으로 선택
+    * 의미가 없는 요소에 이름을 붙이지 않고 관계와 순서로 대상을 파악해서 선택자를 만드는 방법
+    * 첫째와 막내는 `:first-child`, `:last-child`
 ```
-#t1 tr td:nth-child(2) {
-            background-color: aqua;
-        }
+<div class="box">
+  <h1>h1</h1>
+  <p>selector1</p><!--적용대상-->
+  <p>selector2</p>
+  <p>selector3</p>
+</div>
+
+.box p:nth-child(2) { background-color:yellow; }
 ```
+
+* **`nth-of-type`**
+    - 형제 그룹 사이에서 자신과 동일한 요소만을 보고 해당 요소 순서에 따라 대상을 선택
+    - 전체 형제 중 같은 태그 종류 중 n번째
+    - 첫째와 막내는 `:first-of-type`, `:last-of-type`
+```
+<div class="box">
+  <h1>h1</h1>
+  <p>selector1</p><!--적용대상-->
+  <p>selector2</p>
+  <p>selector3</p>
+</div>
+
+.box p:nth-of-type(1) { background-color:yellow; }
+```
+
+* **`:nth-child(An)`**
+    * A 반복 간격(주기)
+    * `:nth-child(3n)` : 3간격으로 형제 요소 선택 (3의 배수) -> 3 6 9 12 번째 요소 선택
+
+* **`:nth-child(An+B)`**
+    * A 반복 간격 (주기)
+    * B 시작 위치 (기준)
+    * `:nth-child(3n+1)` : 3n+1 1번부터 시작해서 3의 배수 -> 1 4 7 10 13 번째 요소 선택
+
+* **`nth-child(odd)`, `nth-child(even)`**
+    * odd 홀수, even 짝수 번째 요소 선택
 
 
 -----
-*  `overflow: hidden;`
+* **overflow** : 요소내의 컨텐츠가 너무 커서 요소내에 모두 보여주기 힘들 때 그것을 어떻게 보여줄지를 지정
+    *  `overflow: hidden;`
+        * 넘친 컨텐츠는 잘려지고 보이지 않음
+    * `overflow: scroll;`
+        * 넘친 컨텐츠는 잘리고, 스크롤바가 생겨서 스크롤해서 볼 수 있음
+        * 가로/세로 스크롤바가 모두 생김
+    * `overflow: auto;`
+        * 넘칠경우 스크롤바가 자동으로 생김
+        * 가로/세로 필요한 부분에만 생김
+    *  `overflow-x`, `overflow-y`
+        * 가로, 세로 overflow 를 각각 제어
+
+
+ -----
+
+
+## 2025-04-21 CSS(4)
+### background 배경 속성
+* **background-image:url**
+    * 배경이미지는 배경색상보다 우선순위로 높게 처리
+```
+background-image:url(상대경로)
+background-image:url(절대경로)
+
+/*배경이미지 2개 이상 연결하기*/
+background-image:url(경로), url(경로)
+```
+
+* **background-repeat**
+    * 기본 값은 repeat(반복)으로 주로 사용하는 값은 no-repeat 이며 결과형태에 따라 반복 종류가 정해짐
+```
+background-repeat:repeat; /*반복*/
+background-repeat:no-repeat; /*반복안함*/
+background-repeat:repeat-x; /*x축 반복*/
+background-repeat:repeat-y; /*y축 반복*/
+
+/*배경이미지가 2장 이상이상일 경우 개별속성*/
+background-repeat:repeat-x, repeat;
+```
+
+* **background-position**
+    * 기본 위치는 왼쪽 상단 값으로 위치(left right top bottom center), 값(0%~100%, px)등을 사용
+```
+background-position:x축 y축;
+background-position:left top;
+background-position:right bottom;
+background-position:center;
+background-position:center top;
+background-position:50% 30%;
+background-position:50%;
+background-position:100px 0;
+background-position:100px;
+
+/*배경이미지가 2장 이상이상일 경우 개별속성*/
+background-position:left top, center bottom;
+```
+
+* **background-size**
+    * - 배경이미지 연결 시 원본 크기가 기본으로 노출
+    - 배경이미지 삽입 위치와 크기에 따른 값을 설정해야할 때 (아래) 값을 사용
+        * contain : 요소 안에 배경 이미지가 전부 나타나도록 가로, 세로 크기 조정
+        * cover : 배경 이미지로 요소의 크기를 모두 덮어 씌우는 형태
+```
+background-size:contain; /*이미지를 잘리지 않는 선에서 크게 설정*/
+background-size:100%; /*이미지의 가로 너비100% 설정*/
+background-size:cover; /*이미지의 가로세로비를 비교하여 빈공간이 생기지 않도록 크게 설정*/
+background-size:1400px; /*강제 크기 입력(가로 세로 동시입력)*/
+background-size:1400px 200px;  /*강제 크기 입력(가로 세로 개별 입력, auto 가능)*/
+
+/*배경이미지가 2장 이상이상일 경우 개별속성*/
+background-size:100%, cover;
+```
+
+* **background-attachment**
+   - 스크롤 이동 시 배경 이미지가 같이 움직일 지 고정될지 설정
+```
+background-attachment:fixed; /*고정*/
+background-attachment:scroll; /*스크롤*/
+
+/*배경이미지가 2장 이상이상일 경우 개별속성*/
+background-attachment:scroll, fixed;
+```
+
+
+* **배경 통합 속성 `background: color url() repeat attachment position`**
+    * 색상-이미지-반복-고정-위치 순서로 작성
+    * 필요에 따라 원하는 값만 골라서 작성 가능
+    * 사이즈는 포지션 뒤에 ` / cover` 붙임
+```
+background:red url(..) repeat fixed left top;
+background:url(...) scroll right bottom;
+background:red center;
+```
 
 
  -----
  ## 2025-
+
+
  -----

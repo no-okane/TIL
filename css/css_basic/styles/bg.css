@@ -1,0 +1,36 @@
+.bg {
+    width: 1000px; height: 1000px;
+    background-repeat: no-repeat;
+}
+
+.bg1 {
+    background: blue url(https://i.pinimg.com/474x/63/2c/24/632c24de6f9bf7792a46561ee6472bdf.jpg) no-repeat center center;
+    /* background-color: blue; */
+    /* background-image: url(https://i.pinimg.com/474x/63/2c/24/632c24de6f9bf7792a46561ee6472bdf.jpg); */
+    /*background-repeat: repeat-x; */
+    /* background-position: center center; */
+}
+
+.bg2 {
+    background: blue url(../images/001.jpg) no-repeat 20% 50% / auto 500%;
+    /* background-color: aqua; */
+    /* background-image: url(../images/001.jpg); */
+    /*background-repeat: no-repeat; */
+    /* background-position: 0 50%; *//* rigtt top */
+    /* background-size: auto 500%; */
+}
+
+.bg3 {
+    background: blue url(https://i.pinimg.com/736x/a7/e2/53/a7e253c543a754a7604ec92bcf53a46f.jpg) no-repeat fixed 50% 20% / 2000px auto;
+    /* background-color: blue;
+    background-image: url(https://i.pinimg.com/736x/a7/e2/53/a7e253c543a754a7604ec92bcf53a46f.jpg);
+    background-position: 50% 20%;
+    background-attachment: fixed; */
+    height: 3000px;
+    /* background-size: 2000px auto; */
+}
+
+img {
+    border-radius: 10%;
+    border: 10px solid #000;
+}
