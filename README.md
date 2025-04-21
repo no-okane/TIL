@@ -925,7 +925,7 @@ background-attachment:scroll, fixed;
 * **배경 통합 속성 `background: color url() repeat attachment position`**
     * 색상-이미지-반복-고정-위치 순서로 작성
     * 필요에 따라 원하는 값만 골라서 작성 가능
-    * 사이즈는 포지션 뒤에 ` / cover` 붙임
+    * 사이즈는 포지션 뒤에 ` / cover` 와 같은 사이즈 값 붙임
 ```
 background:red url(..) repeat fixed left top;
 background:url(...) scroll right bottom;
