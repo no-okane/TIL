@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login | spotify</title>
+
+    <!-- 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 리셋 css -->
+    <link href="./styles/reset.css" rel="stylesheet">
+
+    <!-- 고유 css -->
+    <link href="./styles/index.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <h1>
+            <a href="./index.html"><img src="./images/logo.png" alt="스포티파이 로그인 화면 바로가기"></a>
+        </h1>
+
+        <section>
+            <div class="tap_title">
+                <a href="#" class="sign_in active"><span>sign in</span></a>
+                <a href="#" class="sign_up"><span>sign up</span></a>
+            </div>
+
+            <div class="tap_container">
+                <!-- sign in 클릭했을 때 -->
+                <form action="#" method="post" id="login_frm">
+                    <!-- id pw 입력창 -->
+                    <div class="id_pw">
+                        <input name="user_id" type="text" placeholder="Username">
+                        <input name="user_pw" type="Password" placeholder="password">
+                    </div>
+                    
+                    <!-- 로그인 유지 -->
+                    <div class="stay_signed">
+                        <input type="checkbox" name="user_stay" id="user_stay_on" value="user_stay_on">
+                        <label for="user_stay_on">stay signed in</label>
+                    </div>
+    
+                    <!-- 회원가입 버튼 -->
+                    <button type="submit" id="sign_in_btn">sign in</button>
+                </form>
+                <!-- 비번 찾기 -->
+                <p><a href="#" class="pw_search">Forget Password?</a></p>
+
+                <!-- sign up 클릭했을 때 -->
+                <form action="#" method="post" id="login_frm">
+
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -609,7 +609,7 @@ table, thead, tbody, tfoot, tr, th, td {
     line-height: 100%;
     letter-spacing: 0;
     word-spacing: 0;
-    color: ;
+    color: #808080;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -622,9 +622,10 @@ a {text-decoration: none;}
 ul, ol, li {list-style: none;}
 fieldset {border: 0;}
 legend {display: none;}
-input {border: 0; outline: none;}
+input {border: 0; outline: none;}W
 button {border: 0; background: none; cursor: pointer;}
 table, tr, th, td {border-collapse: collapse;}
+select, option {border: 0; background: none; appearance: none;}
 ```
 
 ### placeholder 선택자
@@ -956,12 +957,154 @@ background:red center;
     * float를 적용하는 형제의 부모 높이가 max-content(기본값)이라면 -> 자식 요소에 float가 들어갈 경우 부모의 높이가 0으로 사라질 수 있음
         * 해결1 : 부모 높이(px) 입력 (디자인 높이가 고정된 경우만 주의해서 사용)
         * 해결2 : float로 인해 부유된 자식들의 영역을 재인식하는 css 속성 입력하여 오류 제거 : `overflow: hidden;`
+```
+/* 사각형 나열======================= */
+#wrap main .ir_wrap .bg .contents {
+    width: 1280px; height: 250px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    /* float 오류 제거 - 하였으나 실패했으므로 높이값 설정*/
+    /* overflow: hidden; */
+
+    /* 플렉스 css - 같은 간격으로 정렬 */
+    display:flex; 
+    flex-wrap:wrap;
+    justify-content:space-between
+}
+
+/* 레이아웃 위치 정렬 기법 */
+/* inline block - float - flex - grid - position -> til 메모*/
+#wrap main .ir_wrap .bg .contents a {
+    /* float 정렬 - 나란히 일직선으로 정렬 */
+    float: left;
+
+    width: 260px; height: 250px;
+    text-align: left;
+}
+```
 * flex
 * grid
 * position
+
+### `box-shadow`
+* box-shodow:x값 y값 blur값 색상 : `box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);`
+
+### 요소 사이를 같은 간격으로 정렬
+```
+display:flex; 
+flex-wrap:wrap;
+justify-content:space-between
+```
 
 
  -----
 
 
+## 2025-04-24 CSS(6)
+### 상태 선택자 : `:hover`
+* 주로 a, button, input 등에 사용하는 선택자
+* 사용자가 마우스 올렸을 때 상태에 따라 스타일 적용
+```
+<a href="#">link</a>
+<button type="button">button</button>
+
+a:hover {background-color:yellow;}
+button:hover {background-color:pink;}
+```
+```
+#wrap main .ir_wrap .bg .contents a:hover {
+    /* a에 마우스 올렸을 때 디자인 */
+    background-color: #fff;
+    border: 1px solid #36B4E5;
+    /* box-shodow:x값 y값 blur값 색상 */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+```
+
+
+### 상태 선택자 : `:checked`
+* 사용자가 체크박스 또는 래디오 버튼 선택했을 때 상태에 따라 스타일 적용
+```
+<input type=”checkbox” name=”ck” value=”ck1”>
+<input type=”radio” name=”ck” value=”ck2” id=”ck2”>
+<label for=”ck2”>로그인 상태 유지</label>
+
+input[type^=check]:checked{color: pink;}
+input[name=ck]:checked~label{color: red;}
+[type^=check] 속성 선택자
+```
+```
+<!-- 체크박스 이미지 적용 -->
+#wrap section .tap_container #login_frm .stay_signed label {
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+/* 체크박스 상태에 따라 디자인 변경 */
+/* background: color image repeat attachment position */
+/* 체크 안 됐을 때 */
+#wrap section .tap_container #login_frm .stay_signed input[name$=stay] + label {
+    background: url(../images/unchecked.png) no-repeat 0px 1.5px;
+    background-size: 16px;
+    padding-left: 25px;
+}
+/* 체크 됐을 때 */
+#wrap section .tap_container #login_frm .stay_signed input[name$=stay]:checked + label {
+    background: url(../images/checked.png) no-repeat 0ox 1.5px;
+    background-size: 16px;
+    padding-left: 25px;
+}
+```
+
+
+### 속성 선택자
+* html 요소 중 주로 form 관련 요소에 사용하는 선택자
+* 속성 기준으로 스타일 적용
+* 대괄호 안에 속성명 속성값 등 기준으로 요소 선택
+    * 선택자[속성] : input[type]  속성 존재 시 선택
+    - 선택자[속성=값] : input[type="text"]속성의 값이 모두 일치할 때 선택합니다.
+    - 선택자[속성^=값] : input[type^="te"]속성의 값이 이것으로 시작할 때 선택합니다.
+    - 선택자[속성$=값] : input[type$="xt"] 속성의 값이 이것으로 끝날 때 선택합니다.
+    - 선택자[속성*=값] : input[type*="text"] 속성의 값에 이것이 포함되었을 때 선택합니다.
+```
+<input type="text">
+
+input[type=text] {background-color:yellow;}
+input[type^=t] {background-color:yellow;}
+input[type$=xt] {background-color:yellow;}
+input[type*=ex] {background-color:yellow;}
+```
+
+
+### 탭 형태 css
+```
+/* sign in 클릭했을 때 */
+#wrap section .tap_title {
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+#wrap section .tap_title a {
+    width: 50%; /* height: 50px; */
+    margin: 0 auto 0 auto;
+    float: left;
+    text-align: center;
+
+    text-transform: uppercase;
+    padding: 20px 0 0 0;
+}
+
+/* 비활성화 a의 자식 span */
+#wrap section .tap_title a span {
+    display: inline-block;
+    font-weight: 300;
+    font-size: ;
+    padding: 5px 0;
+}
+/* 활성화된 a의 자식 span */
+#wrap section .tap_title .active span {
+    border-bottom: 2px solid #1ed760;
+}
+```
+
+-----
 ## 2025-04
