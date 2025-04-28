@@ -1195,6 +1195,39 @@ input[type*=ex] {background-color:yellow;}
 * 단위 같거나 다른 숫자 자동으로 계산 : `width:calc(350px - 59px);`
     * 셈(빼기, 곱하기, 더하기 등) 기호 앞뒤로 스페이스 있어야 함
 ### before , after
+* **`::after`** : 요소의 자식 기준 마지막위치에 내용을 추가
+```
+.box li:first-child::after { 
+  content:'위치 추가';
+  background-color:yellow;
+  display:block;
+}
+```
+```
+<ol class="box">
+  <li>list
+  	<!--after삽입위치-->
+  </li>
+  <li>list</li>
+  <li>list</li>
+</ol>
+```
+* **`::before`** : 요소의 자식 기준 시작위치에 새로운 내용을 추가
+```
+.box li:last-child::before { 
+  content:'위치 추가';
+  background-color:yellow;
+  display:block;
+}
+<ol class="box">
+  <li>list</li>
+  <li>list</li>
+  <li>
+    <!--before삽입위치-->
+    list
+  </li>
+</ol>
+```
 ```
 /* 가상의 형제 만들기 */
 #wrap section #join_frm .member_info .birth_wrap span::after {
