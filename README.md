@@ -1054,7 +1054,26 @@ background:red center;
     text-align: left;
 }
 ```
-* flex
+* **flex** : 수평 수직 1차원 레이아웃으로 메인축과 교차축을 고려하여 다양한 레이아웃을 만들 수 있음
+* flexible layout은 항상 container(부모)와 item(자식)으로 구분해서 이용 -> `display:flex`부모 대상에 display 명령어로 레이아웃이 flex라는 선언부터 시작
+    * flex-direction : container에 적용하는 속성으로 container안의 item의 메인축 방향을 설정
+        * flex-direction:row - 왼쪽->오른쪽 수평축 (기본값)
+        * flex-direction:row-reverse - 오른쪽->왼쪽
+        * flex-direction:column	- 위->아래 수직축 변경
+        * flex-direction:column-reverse - 아래->위
+    * flex-wrap : container에 적용하는 속성으로 container 내부 items 줄바꿈처리를 설정
+        * flex-wrap:wrap - 기본값(자동 줄바꿈) ex) 1 2 3
+        * flex-wrap:wrap-reverse - 행 기준 역방향으로 자동 줄바꿈 처리
+        * flex-wrap:nowrap - 줄바꿈하지 않음(한 줄 처리) 가변너비에 따라 자동으로 % 크기 변경
+    * flex-flow : container에 적용하는 속성으로 flex-direction과 flex-wrap을 묶음으로 처리
+        * flex-direction:column + flex-wrap:nowrap 일 경우(아래)
+        * flex-flow:column nowrap 이라고 작성 가능
+    * justify-content : container에 적용하는 속성으로 메인축의 정렬방법을 설정
+        * justify-content:flex-start	items의 시작점 container의 시작점으로 정렬
+        * justify-content:flex-end	items의 시작점 container의 끝점으로 정렬
+        * justify-content:center	items을 메인축 기준 container에서 가운데 정렬
+        * justify-content:space-between	items을 container의 start, end 양끝 items을 배치하고 나머지는 고르게 정렬
+        * justify-content:space-around	items을 container안에서 균등한 여백을 포함하여 정렬
 * grid
 * position
 

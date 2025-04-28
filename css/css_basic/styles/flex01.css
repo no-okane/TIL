@@ -1,0 +1,30 @@
+.wrap1 {
+    background-color: darkgrey;
+    display: flex;
+    /* container 작성하는 메인축 정렬 방법  */
+    /* flex-direction: row; */
+    /* cpntainer의 item 줄바꿈 처리 */
+    /* flex-wrap:wrap */
+    /* 방향과 줄바꿈 한번에 */
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+.wrap1 li {
+    width: 100px; height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid red;
+    font-size: 3rem;
+}
+.wrap1 li:nth-child(odd) {
+    background-color: yellowgreen;
+}
+.wrap1 li:nth-child(even) {
+    background-color: yellow;
+}
+/* .wrap1 li:nth-child(3) {
+    background-color: violet;
+}
+.wrap1 li:nth-child(4) {
+    background-color: turquoise;
+} */
