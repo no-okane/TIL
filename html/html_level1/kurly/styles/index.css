@@ -1,0 +1,362 @@
+/* index css */
+
+#wrap {
+    padding: 0 0px;
+    background-color: #eee;
+    margin: 0 0 auto;
+}
+
+
+/* 로고======================= */
+#wrap h1 {
+    text-align: center;
+    padding: 50px 0 0 0;
+    margin: 0 0 50px 0;
+}
+#wrap h1 a {}
+#wrap h1 a img {
+    width: 100px;
+}
+
+
+/* 약관======================= */
+#wrap section .join_law {
+    font-size: 0.875rem;
+    width: 690px; height: 200px;
+    overflow-y: scroll;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 auto 80px auto;
+}
+
+
+/* 약관 스크롤======================= */
+#wrap section .join_law::-webkit-scrollbar {appearance: none;
+width: 20px;}
+#wrap section .join_law::-webkit-scrollbar-thumb {
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+    width: 10px;
+}
+#wrap section .join_law::-webkit-scrollbar-button{}
+
+
+
+
+/* 약관 폰트 스타일======================= */
+#wrap section .join_law h2 {
+    margin-bottom: 50px;
+}
+#wrap section .join_law h3 {
+    line-height: 150%;
+}
+#wrap section .join_law p {
+    margin-bottom: 30px;
+    line-height: 150%;
+}
+
+
+
+
+/* 입력 양식 시작======================= */
+#wrap section #join_frm {
+    width: 690px;
+    margin: 0 auto 0px auto;
+    
+}
+
+
+
+
+/* 입력 양식 그룹======================= */
+/* 정렬 정리 float*/
+#wrap section #join_frm .member_info {
+    overflow: hidden;}
+
+    /* 메모 */
+    /* width 1000px */
+#wrap section #join_frm .member_info dt, dd {
+    float: left;
+}
+
+
+
+
+
+/* 메모 */
+/* float */
+/* #wrap section #join_frm .member_info {
+    overflow: hidden;
+    width: 1000px;
+} */
+/* #wrap section #join_frm .member_info dt {
+    float: left;
+    width: 200px;
+    clear: both;
+} */
+/* #wrap section #join_frm .member_info dd {
+    float: left; 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 입력 양식 제목======================= */
+#wrap section #join_frm .member_info dt{
+    width: 165px;
+    font-size: 1.125rem;
+    margin: 0 0 0 0;
+    font-weight: 500;
+    padding: 15px 0 0 0;
+    
+    /* ap메모 */
+    /* width 200 */
+}
+#wrap section #join_frm .member_info dt em {
+    color: #ff0000;
+    font-weight: 600;
+}
+
+
+
+
+
+/* 우측 버튼======================= */
+/* 오른쪽 라인 버튼 공통 */
+/* #wrap section #join_frm .member_info dd:nth-of-type(even) button  {} */
+/* 아이디는 속성 선택자 안 잡힘 */
+
+/* 인증번호 개별 버튼 */
+/* #wrap section #join_frm .member_info dd:nth-of-type(even) #number_recive  {} */
+
+/* 인증번호 */
+#wrap section #join_frm .member_info dd button[name=number_recive] {
+    width: 135px; height: 50px;
+    background-color: #cbcbcb;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* 중복 확인 */
+#wrap section #join_frm .member_info dd button{
+    width: 135px; height: 50px;
+    background-color: #9d00b7;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 50px;
+}
+
+
+
+/* 오른쪽 라인 버튼 공통 */
+/* #wrap section #join_frm .member_info dd:nth-of-type(even) button:hover {
+    filter:brightness(110%);
+} */
+/* #wrap section #join_frm .member_info dd:nth-of-type(even) button  {
+    color: #fff;
+    background-color: #9d00b7;
+    width: 110px; height: 50px;
+    border-radius: 5px;
+    text-align: center;
+} */
+/* 아이디는 속성 선택자 안 잡힘 */
+
+
+
+
+
+/* 전번 개별======================= */
+#wrap section #join_frm .member_info dd input[name=phone_member]{
+    width: 290px ; height: 50px;
+    border: 2px solid #cbcbcb;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 0px 0 0px;
+    float: left;
+    /* width:calc(350px - 59px); */
+}
+
+
+
+
+/* 주소 개별======================= */
+#wrap section #join_frm .member_info .adress_search {
+    width: 350px; height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #9d00b7;
+    text-align: center;
+}
+
+#wrap section #join_frm .member_info .adress {}
+#wrap section #join_frm .member_info .adress_search a {
+    line-height: 45px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+#wrap section #join_frm .member_info .adress_search span {
+    color: #a5a5a5;
+    display: block;
+    text-align: left;
+}
+
+/* 배송지 안내 */
+#wrap section #join_frm .member_info dd p {
+    width: 135px; height: 50px;
+    background-color: #9d00b7;
+    border-radius: 5px;
+    color: #fff;
+    visibility : hidden;
+}
+
+
+
+
+
+
+/* 성별 개별======================= */
+#wrap section #join_frm .member_info .member_gen {
+    width: 350px;
+    text-align: center;
+    padding: 30px 0 0 0;
+}
+
+#wrap section #join_frm .member_info .member_gen input[name$=gen]{
+    margin: 0 0 0 0;
+}
+
+#wrap section #join_frm .member_info .gender {
+    padding: 30px 0 0 0;
+}
+
+#wrap section #join_frm .member_info .member_gen label {
+    margin: 0 25px 0 0;
+    font-weight: 500;
+}
+
+
+
+
+/* 성별 체크 */
+#wrap section #join_frm .member_info dd input[type=radio] {
+    accent-color:#9d00b7;
+}
+
+
+
+
+/* 생일 개별 ======================= */
+#wrap section #join_frm .member_info dd input[name=birth_member]{
+    width: 350px; height: 50px;
+    border: 2px solid #9d00b7;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    margin: 0 0 0 0 ;
+}
+
+
+
+
+
+/* 통신사 선택======================= */
+#wrap section #join_frm .member_info dd select {
+    width: 54px; height: 50px;
+    border: 2px solid #cbcbcb;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #000000;
+    padding: 10px 10px;
+    font-weight: 500;
+    float: left;
+    margin-right: 5px;
+
+    background-image: url(../images/ico_down_16x10.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 80% 50%;
+}
+#wrap section #join_frm .member_info dd section option {}
+
+
+
+
+
+
+/* 입력 양식 입력 칸 공통======================= */
+/* 홀수 */
+/* #wrap section #join_frm .member_info dd:nth-of-type(2n+1) {
+    background-color: yellow;
+}
+#wrap section #join_frm .member_info dd:nth-of-type(odd) {
+    background-color: yellow;
+} */
+ /* width 600 */
+
+/* 짝수 */
+/* #wrap section #join_frm .member_info dd:nth-of-type(even) {
+    background-color: aqua; 
+}
+#wrap section #join_frm .member_info dd:nth-of-type(2n) {
+    background-color: aqua;
+} */
+ /* width 200px */
+
+#wrap section #join_frm .member_info dd{
+    margin: 0 0 15px 0;
+}
+
+#wrap section #join_frm .member_info dd input::placeholder{
+    color: #a4a4a4;
+    font-size: 0.875rem;
+}
+
+/* id pw name email phone 원킬 */
+#wrap section #join_frm .member_info dd input[name^=member]{
+    width: 350px; height: 50px;
+    border: 2px solid #cbcbcb;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+#wrap section #join_frm .member_info dd input[name*=member]{
+    margin: 0 40px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* 가입하기 버튼======================= */
+#wrap section #join_frm .btn {
+    width: 690px;
+    padding: 0 0 60px 0;
+    margin: 60px 0 0 0 ;
+    text-align: center;
+}
+#wrap section #join_frm .btn button {
+    width: 250px; height: 50px;
+    background-color: #9d00b7;
+    border-radius: 5px;
+    color: #fff;
+}
+#wrap section #join_frm .btn #sig_up {}

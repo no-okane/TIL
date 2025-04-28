@@ -533,61 +533,108 @@ width: <width>`,`margin-left: auto;`, margin-right: auto;`
 ### input : 입력/선택 컨트롤 양식
 * 인라인 태그, 빈태그
 * 속성은 입력양식 / 선택&목록 컨트롤 양식 종류에 따라 의미가 달라짐
-    * 입력 양식 속성
-        * type : 인풋 요소가 나타낼 입력 필드 종류
+    * **입력 양식 속성**
+        * **type : 인풋 요소가 나타낼 입력 필드 종류**
             * text : 한줄 입력
             * file : 파일 첨부
             * password : 입력 보안
-            * number : 숫자
+            * number : 숫자 (카운트)
             * email : 이메일
             * search : 검색어
             * date
             * time : 시간입력
             * url
-            * tel : 전화번호
+            * tell : 전화번호
             * week : 날짜입력(시간x)
             * hidden : 서버로 전송되는 숨김영역의 값
-        * textarea : 여러줄의 텍스트를 입력할 수 있는 입력 필드
+
+
+        * **textarea : 여러줄의 텍스트를 입력할 수 있는 입력 필드**
             * **인풋 작성 필요 없음**
             * name :  요소 이름
             * value : 요소 초기값 
-            *  rows : 요소 세로 크기 지정
-            *  cols : 요소 가로 크기 지정
-            *  disabled : 요소 비활성화
-            *  placeholder : 요소 입력 텍스트 지정
+            * rows : 요소 세로 크기 지정
+            * cols : 요소 가로 크기 지정
+            * disabled : 요소 비활성화
+            * placeholder : 요소 입력 텍스트 지정
             *  required : 필수 입력 처리
             *  form : 요소가 속한 폼
-        * name : 인풋 요소이 이름 지정 (데이터 구분)
-        * value : 인풋 요소의 초기값
-        * size : 크기, 보통 css로 조정
-        * maxlength : 글자 수 제한
-        * required : 필수 입력 필드 지정
-        * readonly : 읽기 전용
-        * disabled : 필드 비활성화
-        * autocomplete : 자동 완성 기능, 값은 on/off로 작성
-        * accept : 요소에서 허용하는 파일 형식 지정
-            * `accept=“img/png, application/pdf, img/*”`
-        * multiple : 입력 필드에 여러 이름 입력 시 각 개별 값 처리
-        *  placeholder : 요소 입력 텍스트 지정
-    * 선택&목록 양식 속성
+
+
+        * **입력 양식 안에 쓸 수 있는 속성**
+            * **name : 인풋 요소이 이름 지정 (데이터 구분)**
+            * **value : 인풋 요소의 초기값**
+            * size : 크기, 보통 css로 조정
+            * **maxlength : 글자 수 제한** : type="number"에서 maxlength 적용 불가
+            * required : 필수 입력 필드 지정
+            * readonly : 읽기 전용
+            * disabled : 필드 비활성화
+            * autocomplete : 자동 완성 기능, 값은 on/off로 작성
+            * accept : 요소에서 허용하는 파일 형식 지정
+                * `accept=“img/png, application/pdf, img/*”`
+            * multiple : 입력 필드에 여러 이름 입력 시 각 개별 값 처리
+            *  **placeholder : 요소 입력 텍스트 지정**
+
+    * **선택&목록 양식 속성**
         *  type : 요소가 나타낼 타입
             * checkbox : 다중 선택
             * radio : 단일 선택
-        * select : 목록(option)을 묶어주는 부모 대상
-            * option은 select의 자식으로 목록을 의미
-        * name : 요소의 이름 지정 같은 선택에 포함될 경우 동일한 이름 처리, 그룹명
-        * value : 요소의 고유 초기값 지정
-* label : 글자와 함께 배치된 형태의 input 작업 시 입력, 선택 필드의 편의성, 접근성을 높이기 위해 사용하는 태그
-    * 인라인 태그
-    * 모든 input에 사용 가능하나 일반적으로 checkbox, radio에서 편의성 목적으로 많이 사용
-    * input의 부모로 감싸거나 형제 요소로 사용 가능
-    * 연결하려는 input이 가진 id 명(input의 value와 id 값 같음)과 동일한 값을 label의 for 속성 값으로 입력
-*  버튼 요소 : reset, submit, button
+        * **select : 목록(option)을 묶어주는 부모 대상으로 그룹 속성 (name)적용**
+            * **option은 select의 자식으로 목록을 의미**
+                * 사용자가 실제 선택하는 값으로 데이터 구분값 속성 (value)작성하나 모든 값에 쓸 필요는 없음 -> 사용자가 선택하는 데이터만 사용
+        * name : 요소의 이름 지정 같은 선택에 포함될 경우 동일한 이름 처리, 그룹명(동일 그룹)
+        * value : 요소의 고유 초기값 지정, 개별 데이터 값
+        
+        * **label : 글자와 함께 배치된 형태의 input 작업 시 입력, 선택 필드의 편의성, 접근성을 높이기 위해 사용하는 태그**
+            * 인라인 태그
+            * 모든 input에 사용 가능하나 일반적으로 checkbox, radio에서 편의성 목적으로 많이 사용
+            * input의 부모로 감싸거나 **형제 요소**로 사용 가능
+                * `for`속성 작성하며 input의 id와 동일하게 입력
+                * 반대로 input의 부모라면 for입력 안 해도 됨 (이 경우 반드시 다른 인라인 태그로 묶어야 함) -> 라벨(인풋-스팬)
+                * css 불가능 -> `display:none`으로 숨기고 선택글자를 묶은 태그에 `background-image`로 디자인
+                    * **상태 선택자 : `:checked`**
+                    * 사용자가 체크박스 또는 래디오 버튼 선택했을 때 상태에 따라 스타일 적용
+                    ```
+                    <input type=”checkbox” name=”ck” value=”ck1”>
+                    <input type=”radio” name=”ck” value=”ck2” id=”ck2”>
+                    <label for=”ck2”>로그인 상태 유지</label>
+
+                    input[type^=check]:checked{color: pink;}
+                    input[name=ck]:checked~label{color: red;}
+                    [type^=check] 속성 선택자
+                    ```
+                    ```
+                    <!-- 체크박스 이미지 적용 -->
+                    #wrap section .tap_container #login_frm .stay_signed label {
+                        font-size: 0.75rem;
+                        font-weight: 300;
+                    }
+                    /* 체크박스 상태에 따라 디자인 변경 */
+                    /* background: color image repeat attachment position */
+                    /* 체크 안 됐을 때 */
+                    #wrap section .tap_container #login_frm .stay_signed input[name$=stay] + label {
+                        background: url(../images/unchecked.png) no-repeat 0px 1.5px;
+                        background-size: 16px;
+                        padding-left: 25px;
+                    }
+                    /* 체크 됐을 때 */
+                    #wrap section .tap_container #login_frm .stay_signed input[name$=stay]:checked + label {
+                        background: url(../images/checked.png) no-repeat 0ox 1.5px;
+                        background-size: 16px;
+                        padding-left: 25px;
+                    }
+                    ```
+            * 연결하려는 input이 가진 id 명(input의 value와 id 값 같음)과 동일한 값을 label의 for 속성 값으로 입력
+            * 사용자가 선택하려는 이미지 또는 글자를 묶어서 작성
+
+
+*  **버튼 요소 : reset, submit, button**
+    * `button type="속성 종류" id="버튼 구분명"> 보이는 글자 or 이미지</button>`
     * 인라인 태그
     * 컨트롤 양식들을 입력 후 최종 전송 형태를 결정할 때 사용
-    * 컨트롤 양식 전송할 경우 submit
-    * 컨트롤 양식 초기화할 경우 reset
-    * 다양한 용도의 범용 버튼으로 사용 시 button을 사용
+    * 컨트롤 양식 전송할 경우 submit : `form action`주소에 `method`값 형태로 전달되는 최종 서버 전송 버튼
+    * 컨트롤 양식 초기화할 경우 reset : 취소 또는 삭제
+    * 다양한 용도의 범용 버튼으로 사용 시 button을 사용 : 주소 찾기, 중복 확인, 이전, 다음 재생, 정지 등
     * input type 속성 값으로 시작하는 방법과 button 태그를 입력하는 방법으로 나뉨
 
 
@@ -625,7 +672,19 @@ legend {display: none;}
 input {border: 0; outline: none;}W
 button {border: 0; background: none; cursor: pointer;}
 table, tr, th, td {border-collapse: collapse;}
-select, option {border: 0; background: none; appearance: none;}
+select, option {border: 0; background: none; appearance: none; outline: none;}
+
+/* 크로스브라우징을 위한 인풋 태그 초기화==================================== */
+/* 웹브라우저 엔진 -webkit-, -moz-, -m-, -o- */
+/* 크롬 사파리 엣지 오페라 */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;}
+/* 파이어폭스 */
+input[type=number] {
+    -moz-appearance: none;
+    margin: 0;
+}
 ```
 
 ### placeholder 선택자
@@ -811,7 +870,7 @@ border-radius:50%;
 ```
 
 * **`nth-of-type`**
-    - 형제 그룹 사이에서 자신과 동일한 요소만을 보고 해당 요소 순서에 따라 대상을 선택
+    - **형제 그룹 사이에서 자신과 동일한 요소만을 보고 해당 요소 순서에 따라 대상을 선택**
     - 전체 형제 중 같은 태그 종류 중 n번째
     - 첫째와 막내는 `:first-of-type`, `:last-of-type`
 ```
@@ -860,16 +919,19 @@ border-radius:50%;
 * **background-image:url**
     * 배경이미지는 배경색상보다 우선순위로 높게 처리
 ```
+
 background-image:url(상대경로)
 background-image:url(절대경로)
 
 /*배경이미지 2개 이상 연결하기*/
 background-image:url(경로), url(경로)
+
 ```
 
 * **background-repeat**
     * 기본 값은 repeat(반복)으로 주로 사용하는 값은 no-repeat 이며 결과형태에 따라 반복 종류가 정해짐
 ```
+
 background-repeat:repeat; /*반복*/
 background-repeat:no-repeat; /*반복안함*/
 background-repeat:repeat-x; /*x축 반복*/
@@ -877,11 +939,13 @@ background-repeat:repeat-y; /*y축 반복*/
 
 /*배경이미지가 2장 이상이상일 경우 개별속성*/
 background-repeat:repeat-x, repeat;
+
 ```
 
 * **background-position**
     * 기본 위치는 왼쪽 상단 값으로 위치(left right top bottom center), 값(0%~100%, px)등을 사용
 ```
+
 background-position:x축 y축;
 background-position:left top;
 background-position:right bottom;
@@ -894,6 +958,7 @@ background-position:100px;
 
 /*배경이미지가 2장 이상이상일 경우 개별속성*/
 background-position:left top, center bottom;
+
 ```
 
 * **background-size**
@@ -902,6 +967,7 @@ background-position:left top, center bottom;
         * contain : 요소 안에 배경 이미지가 전부 나타나도록 가로, 세로 크기 조정
         * cover : 배경 이미지로 요소의 크기를 모두 덮어 씌우는 형태
 ```
+
 background-size:contain; /*이미지를 잘리지 않는 선에서 크게 설정*/
 background-size:100%; /*이미지의 가로 너비100% 설정*/
 background-size:cover; /*이미지의 가로세로비를 비교하여 빈공간이 생기지 않도록 크게 설정*/
@@ -910,16 +976,19 @@ background-size:1400px 200px;  /*강제 크기 입력(가로 세로 개별 입�
 
 /*배경이미지가 2장 이상이상일 경우 개별속성*/
 background-size:100%, cover;
+
 ```
 
 * **background-attachment**
    - 스크롤 이동 시 배경 이미지가 같이 움직일 지 고정될지 설정
 ```
+
 background-attachment:fixed; /*고정*/
 background-attachment:scroll; /*스크롤*/
 
 /*배경이미지가 2장 이상이상일 경우 개별속성*/
 background-attachment:scroll, fixed;
+
 ```
 
 
@@ -928,9 +997,11 @@ background-attachment:scroll, fixed;
     * 필요에 따라 원하는 값만 골라서 작성 가능
     * 사이즈는 포지션 뒤에 ` / cover` 와 같은 사이즈 값 붙임
 ```
+
 background:red url(..) repeat fixed left top;
 background:url(...) scroll right bottom;
 background:red center;
+
 ```
 
 
@@ -949,8 +1020,8 @@ background:red center;
 * inline block
 * float : 블록, 인라인 요소를 좌(left), 우 (right) 사용하는 위치 속성 (html4부터 존재한 속성)
     * 좌-우 배치하고 싶은 요소가 형제인 경우에 사용
-    * 형제가 3개 이상인 경우 1->2 옆으로 두고 3을 내리고 싶은 경우
-        * 형제 3에게 `clear:both`를 선언하여 이전 형제의 float 정렬 제거
+    * 형제가 3개 이상인 경우 1->2 옆으로 두고 3을 내리고 싶은 경우 : 형제 3에게 `clear:both`를 선언하여 이전 형제의 float 정렬 제거
+    * 형제 3개 이상인 경우 나란히 두고 싶은 경우(태그가 다를 때) : 1번에 `clear:both`
     * 오른쪽으로 보내고 싶은 형제 요소가 2개 이상인 경우
         * 2개 묶어서 그룹으로 처리하고 `float:right` 한 번만 작성
         * **`float:right`는 2번 이상 사용하면 역순이 되므로 반드시 한 번만 작성**
@@ -992,9 +1063,11 @@ background:red center;
 
 ### 요소 사이를 같은 간격으로 정렬
 ```
+
 display:flex; 
 flex-wrap:wrap;
 justify-content:space-between
+
 ```
 
 
@@ -1006,53 +1079,22 @@ justify-content:space-between
 * 주로 a, button, input 등에 사용하는 선택자
 * 사용자가 마우스 올렸을 때 상태에 따라 스타일 적용
 ```
+
 <a href="#">link</a>
 <button type="button">button</button>
 
 a:hover {background-color:yellow;}
 button:hover {background-color:pink;}
+
 ```
 ```
+
 #wrap main .ir_wrap .bg .contents a:hover {
     /* a에 마우스 올렸을 때 디자인 */
     background-color: #fff;
     border: 1px solid #36B4E5;
     /* box-shodow:x값 y값 blur값 색상 */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-}
-```
-
-
-### 상태 선택자 : `:checked`
-* 사용자가 체크박스 또는 래디오 버튼 선택했을 때 상태에 따라 스타일 적용
-```
-<input type=”checkbox” name=”ck” value=”ck1”>
-<input type=”radio” name=”ck” value=”ck2” id=”ck2”>
-<label for=”ck2”>로그인 상태 유지</label>
-
-input[type^=check]:checked{color: pink;}
-input[name=ck]:checked~label{color: red;}
-[type^=check] 속성 선택자
-```
-```
-<!-- 체크박스 이미지 적용 -->
-#wrap section .tap_container #login_frm .stay_signed label {
-    font-size: 0.75rem;
-    font-weight: 300;
-}
-/* 체크박스 상태에 따라 디자인 변경 */
-/* background: color image repeat attachment position */
-/* 체크 안 됐을 때 */
-#wrap section .tap_container #login_frm .stay_signed input[name$=stay] + label {
-    background: url(../images/unchecked.png) no-repeat 0px 1.5px;
-    background-size: 16px;
-    padding-left: 25px;
-}
-/* 체크 됐을 때 */
-#wrap section .tap_container #login_frm .stay_signed input[name$=stay]:checked + label {
-    background: url(../images/checked.png) no-repeat 0ox 1.5px;
-    background-size: 16px;
-    padding-left: 25px;
 }
 ```
 
@@ -1073,11 +1115,13 @@ input[type=text] {background-color:yellow;}
 input[type^=t] {background-color:yellow;}
 input[type$=xt] {background-color:yellow;}
 input[type*=ex] {background-color:yellow;}
+
 ```
 
 
 ### 탭 형태 css
 ```
+
 /* sign in 클릭했을 때 */
 #wrap section .tap_title {
     margin-bottom: 50px;
@@ -1104,7 +1148,70 @@ input[type*=ex] {background-color:yellow;}
 #wrap section .tap_title .active span {
     border-bottom: 2px solid #1ed760;
 }
+
+```
+
+### form 태그 속성 : 양식에 따라 달라짐
+* `valu`
+    * 입력 양식일 때 - 사용자가 입력한 값 (속성 작성x)
+        * 초기값을 작성하는 경우 : 쇼핑몰의 주문 수량 (기본값 1)
+    * 선택 양식일 때 - 사용자가 선택해서 서버에 전송되는 값
+* `name`
+    * 입력 양식일 때 - 사용자가 선택해서 서버에 전송되는 값
+    * 선택 양식일 때 - 1개, 또는 2개 이상의 선택 양식을 묶어주는 그룹
+
+### form 속성에 사용자 정의값 이름 작성할 경우 주의사항
+* name, value, id, class 등 속성으 ㅣ이름을 작성할 때는 **중복명칭_개별멍칭**을 섞어서 작성
+* 중복명칭에서 주로 사용하는 단어 : `admin`, `user`
+* 개별명칭은 요소의 특징에 따라 달라짐 (ex: `male, id, btn, pw`등)
+* 중복명칭 설정 시 작성 방향도 동일하게
+
+
+### 스크롤 CSS
+```
+
+#wrap section .join_law::-webkit-scrollbar {
+    appearance: none; <!-- 스크롤 영역 안 보이게 -->
+    width: 20px;}
+
+#wrap section .join_law::-webkit-scrollbar-thumb {
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+    width: 10px;
+}
+
+#wrap section .join_law::-webkit-scrollbar-button{}
+
 ```
 
 -----
+
+
+## 2025-04-28 css(7)
+### calc() - css 함수
+* css에서 길이, 비율, 수치 등을 계산할 때 사용하는 함수
+* 단위 같거나 다른 숫자 자동으로 계산 : `width:calc(350px - 59px);`
+    * 셈(빼기, 곱하기, 더하기 등) 기호 앞뒤로 스페이스 있어야 함
+### before , after
+```
+/* 가상의 형제 만들기 */
+#wrap section #join_frm .member_info .birth_wrap span::after {
+    content: '/';
+    display: inline-block;
+    font-size: 0.75rem;
+}
+#wrap section #join_frm .member_info .birth_wrap span:last-of-type::after {
+    display: none;
+}
+```
+
+
+-----
+
+
 ## 2025-04
+
+
+-----
