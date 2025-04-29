@@ -1074,7 +1074,42 @@ background:red center;
         * justify-content:center	items을 메인축 기준 container에서 가운데 정렬
         * justify-content:space-between	items을 container의 start, end 양끝 items을 배치하고 나머지는 고르게 정렬
         * justify-content:space-around	items을 container안에서 균등한 여백을 포함하여 정렬
-* grid
+    * align-content : container에 적용하는 속성으로 교차축의 아이템이 2줄 이상일 경우 정렬 방법
+        * flex-wrap:wrap 적용한 상태여야 함
+        * align-content:stretch	기본값(교차축 기준으로 아이템 늘리기)
+        * align-content:flex-start : container의 start지점 기준 item 정렬
+        * align-content:flex-end : container의 end 지점 기준 item 정렬
+        * align-content:center : container의 가운데 위치 기준 item 정렬
+        * align-content:space-between : container의 start, end 에 양쪽 끝 맞추고 나머지 item 균등하게 정렬
+        align-content:space-around : container에서 모든 item 균등하게 정렬
+    * align-items : container에 적용하는 속성으로 교차축의 아이템이 1줄 일 경우 정렬 방법
+        * flex-wrap:nowrap 적용한 상태여야 함
+        * align-items:stretch : (기본값) 교차축 방향 시작지점에 맞춰서 정렬(start와 거의 차이 없음)
+        * align-items:flex-start : 교차축 기준 container의 시작지점에 맞춰서 정렬(왼쪽 / 위)
+        * align-items:flex-end : 교차축 기준 container의 종료지점에 맞춰서 정렬(오른쪽/아래)
+        * align-items:center : 교차축 기준 container의 가운데지점에 맞춰서 정렬(수직중앙, 수평중앙)
+        * align-items:baseline : 교차축 기준 container의 시작지점에 맞춰서 정렬(왼쪽 / 위)
+    * align-self : item에 적용하는 속성으로 container에 적용하는 align-items보다 우선순위가 높음
+        * flex box의 교차축을 정렬
+        * align-self:flex-start : 교차축 기준 container의 start 시작 위치(top or left)
+        * align-self:flex-end : 교차축 기준 container의 end 종료 위치(bottom or right)
+        * align-self:center : 교차축 기준 container의 center 중심 위치(center, middle)
+        * align-self:baseline : 교차축 기준 container의 baseline 위치(내용 크기에 따라 다름(기본은 start동일))
+        * grid
+    * order : item에 적용하는 속성으로 아이템의 정렬 순서 설정
+        * order:-1 - ex) 예시 숫자 중 가장 작은 수로 첫번째 정렬된다.
+        * order:0 - ex) 예시 숫자 중 두번째 큰 수로 두번째 정렬된다.
+        * order:1 - ex) 예시 숫자 중 가장 큰 수로 세번째 정렬된다.
+    * flex : item에 적용하는 속성으로 증가/감소/기본의 묶음 속성
+        * 주의사항) basis값은 설정 안할 시 기본값 auto가 아닌 숫자 0 으로 인식
+        * flex:1 0 auto : grow(1) shrink(0) basis(auto)
+        * flex:1 1 200px : grow(1) shrink(1) basis(200px)
+        * flex:1 2 : grow(1) shrink(2) basis(0)
+        * flex:2 100px : grow(2) shrink(x) basis(100px)
+        * flex:1 : grow(1) shrink(x) basis(0) -> 가장 많이 씀
+        * flex:1 auto : grow(1) shrink(x) basis(auto)
+        * flex:auto : grow(x) shrink(x) basis(auto)
+        * flex:100px : grow(x) shrink(x) basis(100px)
 * position
 
 ### `box-shadow`

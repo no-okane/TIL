@@ -3,11 +3,14 @@
     display: flex;
     /* container 작성하는 메인축 정렬 방법  */
     /* flex-direction: row; */
+
     /* cpntainer의 item 줄바꿈 처리 */
     /* flex-wrap:wrap */
+
     /* 방향과 줄바꿈 한번에 */
     flex-flow:row wrap;
     justify-content: space-between;
+    height: 600px;
 }
 .wrap1 li {
     width: 100px; height: 100px;
@@ -28,3 +31,44 @@
 .wrap1 li:nth-child(4) {
     background-color: turquoise;
 } */
+
+
+
+
+
+.wrap2 {
+    background-color: darkseagreen;
+    width: 90%; margin: 30px auto 0; padding: 20px; height: 600px;
+    
+    display: flex; /* 방향, 줄바꿈, 기본값 row nowrap */
+    flex-flow: row nowrap;
+    /* 교차축 2줄 이상일 때 저열방법 (flex-wrap:wrap 기준) */
+    /* align-content: flex-start; */
+    /* 교차축 2줄 이상일 때 저열방법 (flex-wrap:nowrap 기준) */
+    align-items: center;
+}
+.wrap2 li {
+    flex: 1;
+    /* width: 150px; height: 150px; */
+    border: 2px solid blue;
+    font-size: 3rem;
+    line-height: 150px;
+    text-align: center;
+}
+.wrap2 li:nth-child(odd) {
+    background-color: salmon;
+}
+.wrap2 li:nth-child(even) {
+    background-color: sandybrown;
+}
+.wrap2 li:nth-child(1) {order: 5;}
+.wrap2 li:nth-child(2) {order: 4;}
+.wrap2 li:nth-child(3) {order: 6;}
+.wrap2 li:nth-child(4) {order: 7;}
+.wrap2 li:nth-child(5) {order: 1;}
+.wrap2 li:nth-child(6) {order: 2; flex: 2;}
+.wrap2 li:nth-child(7) {
+    align-self: start;
+    order: 3;
+}
+.wrap2 li:nth-child(8) {order: 8;}
