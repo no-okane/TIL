@@ -483,6 +483,7 @@ width: <width>`,`margin-left: auto;`, margin-right: auto;`
 * 웹페이지 가장 하단에 위치
 * 구획의 작성자, 저작권 정보, 관련 문서 등의 내용
 * 블럭 태그
+* class 작성 필수
 
 ### `<main></main>`
 * 문서 `<body>`의 주요 콘텐츠
