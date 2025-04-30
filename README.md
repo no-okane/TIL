@@ -1294,8 +1294,17 @@ input[type*=ex] {background-color:yellow;}
     display: none;
 }
 ```
-
-
+* **직선 등을 가상 선택자로 만들 때는 background color를 사용해서 면으로 디자인해야 함**
+```
+#wrap header nav .sub_menu li:nth-child(1)::after {
+    content: '<!-- 내용은 비워둠 -->';
+    <!-- 크기 조절해야 하기 때문에 인라인 블록 -->
+    display: inline-block;
+    margin: 0 0 0 30px;
+    <!-- 크기 조정과 컬러 선택 -->
+    width: 1px; height: 12px;
+    background-color: #000;
+}
 -----
 
 
