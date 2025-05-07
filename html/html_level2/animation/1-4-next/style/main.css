@@ -39,26 +39,50 @@ header nav > ul > li > .sub {
 header nav > ul > li > .sub li {width:100px; padding: 10px 0 0;}
 header nav > ul > li > .sub li a {}
 header nav > ul > li > .sub li a:hover {color:#ddd;}
+
+
+
+
 /*section*/
 section {}
-section .sec1 {background-image:url(../images/main_bg_01.jpg)}
-section .sec2 {background-image:url(../images/main_bg_02_3.jpg)}
-section .sec3 {background-image:url(../images/main_bg_03.jpg)}
+section .sec1 {
+    background-image:url(../images/main_bg_01.jpg);
+    background-attachment: fixed;
+}
+section .sec2 {
+    /* background-image:url(../images/main_bg_02_3.jpg) */
+    background: 
+        url(../images/2\ person.png),
+        url(../images/3\ planet.png),
+        url(../images/1\ space.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px, auto, cover;
+    background-attachment: scroll, scroll, fixed;
+}
+section .sec3 {
+    background-image:url(../images/main_bg_03.jpg);
+    background-attachment: fixed;
+}
 section > div {
     background-size:cover; background-position:center;
     text-align:center; height:100vh; width:100%; 
     display:flex; flex-flow:column wrap; justify-content:center; color:#fff;
 }
-section > div:nth-child(2) {
+/* section > div:nth-child(2) {
     background-repeat:no-repeat;
     background-size:cover, cover;
     background-position:40% center, center;
-}
+} */
 section > div h1 {
     font-family: 'Pattaya', sans-serif;
     font-size:3.0em; line-height:1.5;
 }
 section > div p {font-size:0.875em; letter-spacing:-0.2px; line-height:1.7;}
+
+
+
+
 /*footer*/
 footer {
     position:fixed; left:0; bottom:0; height:100px;
