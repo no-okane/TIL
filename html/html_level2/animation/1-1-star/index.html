@@ -16,6 +16,9 @@
         #v_img {
             position:absolute; right:100px; bottom:-100px;
         }
+
+
+        /* 아래 이미지 3개 */
         #v_btn {
             position:absolute; left:0; bottom:20px; width:100%;
             display:flex; justify-content: center;
@@ -24,7 +27,13 @@
             width:50px; margin:0 10px; 
             display:flex; align-items:flex-end;
         }
-        #v_btn a img {width:100%;}
+        #v_btn a:hover img {
+            transform: translateY(-20px);
+        }
+        #v_btn a img {
+            width:100%;
+            transition: all 0.3s;
+        }
     </style>
     <script>
         window.onload=function(){

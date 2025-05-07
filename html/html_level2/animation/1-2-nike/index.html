@@ -30,7 +30,14 @@
             width:100px; margin:0 10px; 
             display:flex; align-items:flex-end;
         }
-        #v_btn a img {width:100%;}
+        #v_btn a:hover img {
+            transform: rotate(15deg);
+            }
+        #v_btn a img {
+            width:100%;
+            transition: all 0.2s;
+            transform-origin: right bottom;
+        }
     </style>
     <script>
         window.onload=function(){

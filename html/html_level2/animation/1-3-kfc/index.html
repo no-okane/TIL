@@ -12,21 +12,40 @@
         header {padding:30px 0;}
         header img {width:100%;}
         main {height:800px; position:relative; display:flex; justify-content:space-between; padding:50px 0 0;}
+        
+        
+        main .txt #order:hover {
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+            color: #da1e27;
+            width: 250px;
+            /* transform: scaleX(1.07); */
+        }
         main .txt #order {
             background:#fff; border-radius:50px; text-align:center; padding:20px 0;
             display:inline-block; margin-top:50px; font-weight:600;
             width:200px; color:#000;
+
+            transform-origin: left center;
+            transition: all 0.5s;
         }
         #sns {position:absolute; left:0; bottom:100px;}
         #sns a {
             display:inline-block; width:40px; margin:0 10px;
             position:relative; top:0;
         }
-        #sns a img {width:100%;}
+        #sns a:hover img {
+            transform: translateY(-20px);
+        }
+        #sns a img {
+            width:100%;
+            transition: all 0.5s;
+        }
         #dynamic #btn {display:flex; position:absolute; right:0; bottom:100px;}
         #dynamic #btn a {margin:0 5px;}
         #dynamic #btn a#prev {}
-        #dynamic #btn a#next {}
+        #dynamic #btn a#next {
+            transform: rotate(180deg);
+        }
     </style>
     <script>
         window.onload=function(){
