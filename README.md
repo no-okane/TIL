@@ -1305,10 +1305,106 @@ input[type*=ex] {background-color:yellow;}
     width: 1px; height: 12px;
     background-color: #000;
 }
------
-
-
-## 2025-04
+```
 
 
 -----
+
+
+## 2025-04-30 css(8)
+### position : 위치속성
+* 모든 position 관련 속성은 relative, absolute, fixed, sticky, static(기본값)중 1개를 필수로 작성하여 위치 기준 설정
+*  다음 left, right, top, bottom 속성을 사용하여 원하는 위치로 대상을 이동
+* **`position:relative`**
+    * 원래 위치를 기준으로 움직임
+    * absolute의 기준으로 부모 위치를 잡을 때도 사용
+```
+selector {
+  position:relative;
+  left:0; top:0;
+}
+```
+* **`position:absolute`**
+    * 부모 위치를 기준으로 상대적으로 위치를 움직임
+    * 부모 기준은 가장 가까운 부모 기준 position 값을 인식(모든 position 가능)
+        * 부모 중 별도의 position 속성이 없다면 body를 기준으로 위치 설정되므로 부모 중 원하는 기준 대상에 반드시 position 속성 작3성
+```
+selector {
+  position:absolute;
+  left:0; top:0;
+}
+```
+* **`position:fixed`**
+* 페이지 스크롤길이와 관계없이 웹브라우저 위치에 고정
+* 팝업 요소에 주로 사용
+* body를 기준으로 위치가 정해짐
+```
+selector {
+  position:fixed;
+  right:0; bottom:0;
+}
+```
+* **`position:sticky`**
+* 뷰포트(viewport) 기준 설정한 위치 값에 따라 끈적하게 붙은 모습을 유지
+* left, right, top, bottom 방향에 따라 뷰포트의 x축과 y축으로 위치를 인식
+    * sticky의 부모가 스크롤되는 뷰포트 영역에 보이는 동안  sticky가 적용
+* sticky의 부모가 뷰포트 영역에서 벗어나면 sticky 기능도 종료
+* webkit- CSS 접두어를 사용해야 -> https://caniuse.com/
+* header의 nav요소를 상단에 붙일 경우 주로 사용
+```
+selector {
+  position:sticky;
+  top:50px;
+}
+```
+
+
+-----
+
+
+## 2025-05-07 css(9)
+### **`transition`** : 스타일이 변할 때 애니메이션 효과를 부여하는 속성
+* 기존 css 속성 중 어느 속성에게 효과를 부여할지, 지속시간, 속도, 딜레이 시간 등을 설정
+* css 상태 선택자 (:hover), 자바스크립트 타이머 함수, 이벤트와 함께 많이 활용
+
+* **`transition : 속성, 속성, 속성`** : 2개 이상 속성 작성 가능
+* **트랜지션 속성**
+* **`transition : 애니메이션적용속성 지속시간 타이밍 딜레이속도`** 
+    * **transition-property** (필수, 기본값 all) : 애니메이션 적용 대상 
+    * **transition-duration** (필수, 기본값 1s) : 애니메이션 지속 시간
+    * **transition-timing-function** (기본값 ease) : 애니메이션 함수, 타이밍 설정
+        * linear : 일정속도 움직임
+        * ease (slow->fast->slow) 천천히 시작되고 중간에 빨라지고 다시 느려지면서 끝
+        * ease-in : 천천히 시작
+        * ease-out : 천천히 끝
+        * ease-in-out : 천천히 시작되어 천천히 끝
+        * cubic-bezier(n,n,n,n) 정의한 큐빅 베지어 함수에 따라 진행 (개발자도구로 간단히 설정가능)
+    * **transition-delay** (기본값 0) : 애니메이션 시작 전 딜레이 시간
+
+
+### **``transfrom`** : 요소에 회전, 크기, 기울기 이동 등의 효과 부여
+* 자체 애니메이션 기능을 가지고 있지 않기 때문에 즉시 변경을 원하지 않을 땐 별도의 트랜지션 속성 필요
+* 모든 트랜스폼 적용 대상은 중심축 센터를 기준 위치로 사용하여 속성 적용
+* 두 가지 이상 속성 값을 묶어서 작성 가능
+* 속성 중 rotate+translate의 경우 속성값에 따라 애니메이션 진행 결과가 다르게 적용될 수 있음
+* 속성과 속성 사이는 공백으로 구분하며 세미콜론은 마지막에만 입력
+* `transform-origin:` : 기준 위치 지정 (트랜지션과 같은 선택자, 기준 선택자)
+```
+transform:scale(1) rotate(20deg)
+transform:translate(20px, 0) rotate(30deg) scale(2)
+```
+* **트랜스폼 속성**
+* **scale** : 요소의 크기를 X, Y축으로 확대 또는 축소합니다. (0 또는 양수 값 입력)
+    * scale(n), scaleX(n), scaleY(n)
+    * 별도의 단위 입력 없이 배율 기준으로 숫자를 입력
+    * transform-origin 미 설정 시 center 기준으로 크기가 설정
+* **rotate(deg)** : 요소를 deg 단위 값 만큼 회전(양수, 음수 값 가능)
+    * transform-origin 미 설정 시 center 기준으로 설정
+* **skew** : 입력한 값에 따라 기울기, 비틀기
+    * skew(deg), skewX(deg), skewY(deg)
+* **translate** : 요소의 위치를 X, Y 축으로 이동 (px, %, em 단위를 사용가능)
+    *  translate(x, y), translateX(n), translateY(n)
+
+-----
+## 2025-05-08 css(10)
+### 
