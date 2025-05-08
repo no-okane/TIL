@@ -35,15 +35,58 @@
         /* 
         1(주황선) 2(책) 3(문어) 4(벌) 5(꽃병) 6(별1) 7(별2)
         */
-        main #deco .obj1 {z-index:9; right:0;}
-        main #deco .obj2 {z-index:10; top:-100px; left:-50px;}
-        main #deco .obj3 {z-index:9; right:190px; top:0;}
-        main #deco .obj4 {z-index:11; right:0; bottom:0;}
-        main #deco .obj5 {z-index:11; right:150px; bottom:0;}
-        main #deco .obj6 {z-index:12; left:-50px; bottom:100px;}
-        main #deco .obj7 {z-index:12; right:50px; top:-30px;}
+        main #deco .obj1 {
+            z-index:9; right:0;
+            animation: rotate1 1.5s linear infinite alternate both;
+        }
+        main #deco .obj2 {
+            z-index:10; top:-100px; left:-50px;
+            animation: right1 3s both;
+        }
+        main #deco .obj3 {
+            z-index:9; right:190px; top:0;
+            animation: up1 3s 0.8s forwards;
+        }
+        main #deco .obj4 {
+            z-index:11; right:0; bottom:0;
+            animation: right2 3s forwards;
+        }
+        main #deco .obj5 {
+            z-index:11; right:150px; bottom:0;
+            animation: rotate1 1.5s linear infinite alternate-reverse both;
+        }
+        main #deco .obj6 {
+            z-index:12; left:-50px; bottom:100px;
+            animation: star 1.5s infinite alternate both;
+        }
+        main #deco .obj7 {
+            z-index:12; right:50px; top:-30px;
+            animation: star 1.5s infinite alternate both;
+        }
+
         
         /* 애니메이션 */
+        @keyframes right1 {
+            from {transform: translateX(120px); /* opacity: 0; */}
+            to {transform: translateX(0); /* opacity: 1; */}
+        }
+        @keyframes right2 {
+            from {transform: translateX(0);}
+            to {transform: translate(-400px, 80px) rotate(180deg);}
+        }
+
+        @keyframes up1 {''
+            from {transform: translateY(20px);}
+            to {transform: translateY(-130px);}
+        }
+        @keyframes star {
+            from {transform: scale(100%);}
+            to {transform: scale(120%);}
+        }
+        @keyframes rotate1 {
+            from {transform: rotate(0);}
+            to {transform: rotate(20deg);}
+        }
         
 
     </style>

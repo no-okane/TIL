@@ -21,7 +21,31 @@
         main {height:150vh; }
         main #visual {background:#26bad7; min-width:1200px; margin:0 auto; height:550px; position:relative;}
         main #visual #deco {position:relative; width:1200px; margin:0 auto;}
-        main #visual #deco .obj {position:absolute;}
+        main #visual #deco .obj {
+            position:absolute;
+            display: inline-block;
+        }
+
+        main #visual #deco span:nth-of-type(1) {
+            animation: obj1 7s infinite linear alternate both;
+        }
+
+        main #visual #deco span:nth-of-type(2), 
+        main #visual #deco span:nth-of-type(4), 
+        main #visual #deco span:nth-of-type(7), 
+        main #visual #deco span:nth-of-type(9) {
+            animation: star 1.5s infinite linear alternate both;
+        }
+
+        main #visual #deco span:nth-of-type(3),
+        main #visual #deco span:nth-of-type(6) {
+            animation: obj1 2s infinite linear alternate both;
+        }
+
+        main #visual #deco span:nth-of-type(5),
+        main #visual #deco span:nth-of-type(8) {
+            animation: obj1 3s infinite linear alternate-reverse both;
+        }
 
         main #visual #deco .obj1 {
             top:170px; left:50%; margin-left:-342px;
@@ -69,6 +93,14 @@
         main .category a.active {background:#26bad7; color:#fff;}
 
         /* 애니메이션 */
+        @keyframes star {
+            from {transform: scale(100%);}
+            to {transform: scale(120%);}
+        }
+        @keyframes obj1 {
+            from {transform: rotate(0);}
+            to {transform: rotate(20deg);}
+        }
 
     </style>
 </head>

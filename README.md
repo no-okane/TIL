@@ -1404,7 +1404,83 @@ transform:translate(20px, 0) rotate(30deg) scale(2)
     * skew(deg), skewX(deg), skewY(deg)
 * **translate** : 요소의 위치를 X, Y 축으로 이동 (px, %, em 단위를 사용가능)
     *  translate(x, y), translateX(n), translateY(n)
+* **트랜스폼으로 메뉴 만들기**
+```
+nav .gnb > li:hover > .lnb {
+    /* display: block; */
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+}
+nav .gnb > li > .lnb {
+    /* display: none; */
+    /* scaleY(0) 숨기기,  scaleY(1)보이기 */
+    /* scaleX(0) 숨기기,  scaleX(1)보이기 */
+    transform: scaleY(0) translateY(-10px);
+    opacity: 0;
+    transition: all 0.5s;
+    transform-origin: top left;
+    position: absolute;
+    left: 0; top: 40px;
 
+    width: 100%;
+    background-color: rgb(158, 215, 255);
+}
+```
+
+### **transform-3D**
+* 3D 속성을 주고 싶다면 먼저 원근감을 적용하고자 하는 요소와 그 부모로 대상을 구분
+* `translate3(x, y, z)` : z축 깊이 3d 공간에서 이동 효과 적용
+* `rotate3d(x, y, z, angle)` : 3d 공간에서 회전 적용 함수 회전 축(axis) 적용
+* `scale3d(x,y,z)` : 3d 공간에서 요소의 크기에 대한 효과 적용
+* `skew(x,y,z)` : 3d 공간에서 기울이기 변형 적용
+* **부모에 3차원 객체 명령과 투영점 설정 :`perspective:숫자px`, `transform-style: preserve-3d;`**
+    * **`transform-style: preserve-3d;` 속성은 3D속성적용 대상의 부모에 주는 명령으로 부모 내에 자식 요소를 3차원 객체로 인식할 수 있게 하는 속성**
+    * **`perspective:숫자px` 속성은 값이 작을 수록 극적으로 표현하며  px단위를 주로 사용**
+* 이면 가시성 : `backface-visibility: hidden;`
+
+
+### 그라디언트
+* 그라디언트 사용 시 백그라운드로 명령
+* 사이트 참고 - https://cssgradient.io/
+* 마스크 기능으로 그라디언트 색의 텍스트 만들기
+    1) 글자 투명으로 만들고 `color: transparent;`
+    2) 배경을 글자에 클리핑 :`background-clip: text;`
+```
+color: transparent;
+background-clip: text;
+```
 -----
+
+
 ## 2025-05-08 css(10)
-### 
+### animation, @keyframes
+* 함께 사용하여 transition없이 즉시 변경이 아닌 서서히 변경하는 애니메이션을 만듦 (transform도 @keyframes과 함께 사용하여 애니메이션 적용 가능)
+* 애니메이션 적용 순서 
+    1. 키프레임 (장면)생성 -> `transform` 활용
+    2. 애니메이션 호출
+* 애니메이션 통합 속성 순서 : `animation:name duration timing-function delay iteration-count direction fill-mode` (이름, 지속시간, 진행속도, 지연시간, 반복횟수, 재생방향, 종료스타일)
+    * duration : 지속시간, 애니메이션을 한번 재생하는데 걸리는 시간
+    * timing-function : 가속도(진행속도)를 설정
+        * linear 일정속도 전환
+        * ease (slow->fast->slow) 천천히 시작되고 중간에 빨라지고 다시 느려지며 끝
+        * ease-in 천천히 시작
+        * ease-out 천천히 끝
+        * ease-in-out 천천히 시작되어 천천히 끝
+        * cubic-bezier(n,n,n,n) 정의한 큐빅 베지어 함수에 따라 진행(개발자도구로 간단히 설정가능)
+    * delay : 애니메이션 시작 전 지연시간을 설정(기본값 0)
+    *  iteration-count : 애니메이션의 반복횟수를 지정, 단위 없이 숫자 입력,무한반복은 infinite로 입력
+    * direction : 애니메이션의 재생방법을 지정 (기본 normal)
+        *  **alternate** : 정방향 -> 역방향 -> 정방향
+            * 재생횟수를 짝수 기준(2회 이상) 설정
+        * reverse : 역방향(재생횟수와 관계 없음)
+        * alternate-reverse : 역방향 -> 정방향 -> 역방향
+            * 재생횟수를 홀수 기준(1 또는 3회 이상) 설정하여 확인해야 함
+            * 재생횟수 관계 없이 애니메이션 종료 위치는 @keyframes에 등록된 시작 위치로 이동
+    * fill-mode : 애니메이션이 시작 전 또는 종료 후 어떤 값이 적용될지 지정(기본값 none)
+        *  forwards : @keyframes 시작 위치와 상관없이 animation-direction 방향에 따라 종료 위치에서 정지
+        * backwards : animation-direction 관계없이 @keyframes 에 설정된 시작 위치에서 정지
+        * **both** : animation-direction 방향에 따라 시작/종료 위치를 조합하여 자동으로 위치를 설정
+    * animation-play-state : 재생 또는 일시정지 
+        * 보통 iteration-count(재생횟수)를 infinite(무한반복)으로 설정한 경우 필요에 따라 사용
+        * :hover 선택자 사용 시 해당 이벤트경우에만 일시정지 되고 마우스를 바깥으로 이동하면 바로 다시 기본값(재생)됨
+        * 재생 running(기본값) / 일시정지 paused

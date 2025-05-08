@@ -60,17 +60,46 @@
             width:1200px; height:100vh; margin: 0 auto;
             display:flex; justify-content: space-between; align-items:center;
         }
-        main .center h1 {color:#fff; display:flex; flex-flow:column nowrap; justify-content: space-between;}
+        main .center h1 * {color:#fff;}
+        main .center h1 {/* color:#fff; */ display:flex; flex-flow:column nowrap; justify-content: space-between;}
+
+        main .center h1 span:first-of-type {
+            animation: h1 1.5s alternate both;
+        }
+        main .center h1 span:last-of-type {
+            animation: h1 1.5s alternate both;
+            animation-delay: 0.7s;
+        }
+
         main .center h1 span {font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0;}
+
         main .center .right {
             position:relative; right:174px; top:-100px;
+            animation: right 1.5s both;
         }
         main .center .right span {
             position:absolute; width:174px; height:174px;
         }
-        main .center .right span:nth-child(1) {}
-        main .center .right span:nth-child(2) {text-align:center; line-height:174px;}
+        main .center .right span:nth-child(1) {
+            animation: circle 10s linear infinite;
+        }
+        main .center .right span:nth-child(2) {
+            text-align:center; line-height:174px;
+        }
+
         /* animation */
+        @keyframes h1 {
+            from {transform: translateY(200px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+        @keyframes circle {
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
+        }
+        @keyframes right {
+            from {transform: translateX(150px); opacity: 0;}
+            to {transform: translateX(0); opacity: 1;}
+        }
     </style>
 </head>
 <body>

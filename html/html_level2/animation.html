@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation | keyframes | css</title>
+
+    <link rel="stylesheet" href="./styles/reset.css">
+
+    <style>
+        main {background-color: antiquewhite; padding: 50px; height: 100vh;}
+        main .target {} /* 공통 */
+        main .ball {
+            background: radial-gradient(at left top, #fff, #222);
+            background-size: 250%;
+            /* background-position: -50px 50px; */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* animation: right500 2s linear 0.5s 3 alternate both; */
+            margin: 20px;
+        }
+        main .ball2 {
+            background: radial-gradient(at left top, #fff, #222);
+            background-size: 250%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* animation: bottom500 1.5s ease infinite alternate both; */
+            margin: 20px;
+        }
+        main .ball3 {
+            margin: 20px;
+            /* animation: zigzag 10s ease-in-out 1 alternate both; */
+        }
+        main .ball3 img {
+            width: 80px;
+            /* animation: rotate360 0.3s linear 20 alternate; */
+        }
+        section {}
+        section .ad {
+            height: 80vh;
+            padding: 100px;
+        }
+        section .ad * {
+            font-size: 5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        section .ad span {
+            animation: ad_text 0.8s ease both;
+            display: inline-block;
+        }
+        section .ad span:nth-child(1) {
+            animation-delay: 0;
+        }
+        section .ad span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        section .ad span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        section .ad span:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        section .ad2 {
+            height: 80vh;
+        }
+        section .ad2 em {
+            display: inline-block;
+            animation: ad_text2 0.7s ease both;
+
+            font-size: 3rem;
+        }
+        section .ad2 em:nth-child(1) {animation-delay: 0.2s;}
+        section .ad2 em:nth-child(2) {animation-delay: 0.4s}
+        section .ad2 em:nth-child(3) {animation-delay: 0.6s}
+        section .ad2 em:nth-child(4) {animation-delay: 0.8s}
+        section .ad2 em:nth-child(5) {animation-delay: 1s}
+        section .ad2 em:nth-child(6) {animation-delay: 1.2s}
+        section .ad2 em:nth-child(7) {animation-delay: 1.4s}
+        section .ad2 em:nth-child(8) {animation-delay: 1.6s}
+        section .ad2 em:nth-child(9) {animation-delay: 1.8s}
+        section .ad2 em:nth-child(10) {animation-delay: 2s}
+        section .ad2 em:nth-child(11) {animation-delay: 2.2s}
+        section .ad2 em:nth-child(12) {animation-delay: 2.4s}
+        section .ad2 em:nth-child(13) {animation-delay: 2.6s}
+
+        /* 애니메이션 적용 순서 1. 키프레임 (장면)생성 2. 애니메이션 호출 */
+        @keyframes right500 {
+            from {transform: translateX(0) rotate(0);}
+            to {transform: translateX(500px) rotate(360deg);}
+        }
+        @keyframes bottom500 {
+            from {transform: translateY(0) rotate(0);}
+            to {transform: translateY(500px) rotate(360deg);}
+        }
+        @keyframes zigzag {
+            0% {transform: translate(0, 0);}
+            10% {transform: translate(500px, 0);}
+            20% {transform: translate(0, 500px);}
+            30% {transform: translate(500px, 500px);}
+            40% {transform: translate(0, 500px);}
+            50% {transform: translate(500px, 0);}
+            60% {transform: translate(0, 0);}
+        }
+        @keyframes rotate360 {
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
+        }
+        @keyframes ad_text {
+            from {transform: translateY(200px); opacity: 0;}
+            to {transform: translateX(0); opacity: 1;}
+        }
+        @keyframes ad_text2 {
+            from {transform: translateY(-200px); opacity: 0;}
+            to {transform: translateX(0); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="target ball"></div>
+        <div class="target ball2"></div>
+        <div class="target ball3"><img src="./images/ball.png" alt=""></div>
+    </main>
+    <section>
+        <div class="ad">
+            <span>h</span>
+            <span>t</span>
+            <span>m</span>
+            <span>l</span>
+        </div>
+        <div class="ad2">
+            <em>마</em>
+            <em>음</em>
+            <em>따</em>
+            <em>라</em>
+            <em>뛰</em>
+            <em>는</em>
+            <em>건</em>
+            <em>멋</em>
+            <em>지</em>
+            <em>지</em>
+            <em>않</em>
+            <em>아</em>
+            <em>?</em>
+        </div>
+    </section>
+</body>
+</html>
