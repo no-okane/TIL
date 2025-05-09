@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹3 | css</title>
+
+    <link rel="stylesheet" href="./responsive3(1)_files/reset.css">
+    <style>
+        /* 컴 1025~100% col3 */
+        /* 탭 769~1024% col2 */
+        /* 폰 320~768% col1*/
+        #youtube_wrap {
+            width: 100%;
+            min-width: 320px;
+        }
+        #youtube_wrap header {
+            height: 56px;
+            width: 100%;
+            background-color: blueviolet;
+            position: sticky; top: 0;
+        }
+        #youtube_wrap main {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        #youtube_wrap main aside {
+            background-color: bisque;
+            height: calc(100vh - 56px);
+            width: 240px;/* 반응형에서 고정 영역 px허용 */
+            position: sticky; /* 웹브라우저 특정 위치 (top0에 닿으면 부모(main)의 세로 크기 (자식 최대 높이)가 끝날 때까지 화면에 고정 */
+            top: 56px; left: 0;
+        }
+        #youtube_wrap main section {
+            background-color: rgb(103, 160, 95);
+            height: 300vh;
+            width: calc(100% - 240px);
+            
+        }
+        #youtube_wrap main section .category {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        #youtube_wrap main section .category li {
+            width: calc(100% - (10px * 9));
+        }
+        #youtube_wrap main section .category li:nth-child(odd) {background-color: coral;}
+        #youtube_wrap main section .category li:nth-child(even) {background-color: cornflowerblue;}
+        #youtube_wrap main section .mv {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        #youtube_wrap main section .mv li {
+            height: 300px;
+            width: calc((100% - (10px * 2)) / 3);
+        }
+        #youtube_wrap main section .mv li:nth-child(odd) {background-color: aquamarine;}
+        #youtube_wrap main section .mv li:nth-child(even) {background-color: rgb(199, 168, 193);}
+
+        /* 미디어쿼리 */
+        @media screen and (max-width:1024px) {
+            /* 사이드 축소, 썸넬 2개 */
+            /* #youtube_wrap main aside {display: none;}
+            #youtube_wrap main section {width: 100%;} *//* 사이드 뺀 값 제거하고 100%인식 */
+            #youtube_wrap main aside {width: 64px;}
+            #youtube_wrap main section {width: calc(100% - 64px)}/* 사이드 뺀 값 제거하고 
+            100%인식 */
+            #youtube_wrap main section .mv li {width: calc((100% - (10px * 1)) / 2);}
+        }/* 764~1024 */
+        @media screen and (max-width:768px) {
+            #youtube_wrap main aside {display: none;}
+            #youtube_wrap main section {width: calc(100%)}
+            #youtube_wrap main section .mv li {width: calc((100% - (10px * 0)) / 1);}
+        }/* 320~768 */
+    </style>
+</head>
+<body>
+    <div id="youtube_wrap">
+        <header>header</header>
+        <main>
+            <aside>왼쪽 고정</aside>
+            <section>
+                <ul class="category">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+                <div>
+                    <ul class="mv">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
