@@ -46,22 +46,22 @@ main .bg_wrap .bg {
 main .bg_wrap .bg1 {
     height:100px; 
     background-image: url(../images/bg_cloud.png);
-    animation: bg3000 150s linear infinite;
+    animation: bg3000 150s linear infinite both;
 }
 main .bg_wrap .bg2 {
     height:200px; 
     background-image: url(../images/bg_city1.png);
-    animation: bg3000 100s linear infinite;
+    animation: bg3000 100s linear infinite both;
 }
 main .bg_wrap .bg3 {
     height:100px; position:relative; top:-96px;
     background-image: url(../images/bg_city2.png);
-    animation: bg3000 30s linear infinite;
+    animation: bg3000 30s linear infinite both;
 }
 /* 배경용 애니메이션 */
 @keyframes bg3000 {
-    from {background-position: 0 0;}
-    to {background-position: 1000px 0;}
+    from {background-position: 0 0; opacity: 0;}
+    to {background-position: 1000px 0; opacity: 1;}
 }
 /* 메인제목 */
 main .txt {}
