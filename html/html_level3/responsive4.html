@@ -8,7 +8,30 @@
     <link rel="stylesheet" href="./styles/reset.css">
 
     <style>
+        /* 컴 1000~max================================================================== */
+        header {
+            min-width: 320px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        header .all_nav {display: none;}
+        header h1 {}
+        header nav {}
+        header .right_menu {}
+        header .right_menu #search_btn {}
+        header .right_menu .search_open {display: none;}
+        header .right_menu .login_btn {}
 
+        @media screen and (max-width:999px) {
+            
+        }/* 700~999 탭 */
+
+        @media screen and (max-width:699px) {
+            header .all_nav {display: block;}
+            header nav {display: none;}
+            header .right_menu .login_btn {display: none;}
+        }/* 320~699 폰 */
     </style>
 </head>
 <body>
