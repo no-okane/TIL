@@ -42,6 +42,12 @@
             background:url(images/bg_flow.png) repeat-x left top;
             height:150px; width:100%;
             position:absolute; z-index:30;
+            animation: title 20s linear infinite both;
+        }
+
+        @keyframes title {
+            from {background-position: 0;}
+            to {background-position: 1000px;}
         }
     </style>
 </head>
@@ -53,7 +59,8 @@
     <main>
         <div class="center">
             <div class="video_bg">
-                <video src="video/golden.mp4" autoplay muted loop></video>
+                <iframe width="1000" height="600" src="https://www.youtube.com/embed/uOGaKdb60WE?autoplay=1&mute=1&loop=1&playlist=uOGaKdb60WE" title="TWS (투어스) &#39;Lucky to be loved&#39; Special Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- <video src="video/golden.mp4" autoplay muted loop></video> -->
                 <img src="images/img_intro.png" alt="">
             </div>
             <div class="txt_bg_ani"></div>

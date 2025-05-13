@@ -32,6 +32,36 @@ main {
     top: 80px;
     text-align: center;
 }
+
+/* 좌 우 끊긴 배경 자연스럽게 처리 */
+main::before {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(90deg, rgb(9,13,43), transparent);
+    z-index: 29;
+}
+
+main::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 100%;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background: linear-gradient(-90deg, rgb(9,13,43), transparent);
+    z-index: 29;
+}
+
 main > * {max-width:1400px; margin:0 auto;}
 /* 중첩순서 처리 배경(10) 그라디언트(20) 나머지(30) */
 main .bg_wrap {position:absolute; z-index:10;}
@@ -46,23 +76,25 @@ main .bg_wrap .bg {
 main .bg_wrap .bg1 {
     height:100px; 
     background-image: url(../images/bg_cloud.png);
-    animation: bg3000 150s linear infinite both;
+    /* animation: bg3000 90s linear infinite both; */
 }
 main .bg_wrap .bg2 {
     height:200px; 
     background-image: url(../images/bg_city1.png);
-    animation: bg3000 100s linear infinite both;
+    /* animation: bg3000 60s linear infinite both; */
 }
 main .bg_wrap .bg3 {
     height:100px; position:relative; top:-96px;
     background-image: url(../images/bg_city2.png);
-    animation: bg3000 30s linear infinite both;
+    /* animation: bg3000 30s linear infinite both; */
 }
 /* 배경용 애니메이션 */
-@keyframes bg3000 {
-    from {background-position: 0 0; opacity: 0;}
-    to {background-position: 1000px 0; opacity: 1;}
-}
+/* @keyframes bg3000 {
+    0% {background-position: 0 0; opacity: 0;}
+    10% {background-position: 100px 0; opacity: 1;}
+    90% {background-position: 900px 0; opacity: 1;}
+    100% {background-position: 1000px 0; opacity: 0;}
+} */
 /* 메인제목 */
 main .txt {}
 /* 메인 자동차 위 리스트3 */
@@ -71,14 +103,15 @@ main .car {margin-top:150px; text-align:center; width:600px;}
 main .car #car {width:100%;}
 main .car #left_tire, main .car #right_tire {
     position:absolute; bottom:25px; width:67px;
-    animation: rotate360 0.5s linear infinite;
+    /* animation: rotate360 0.5s linear infinite; */
 }
 main .car #left_tire {left:102px;}
 main .car #right_tire {right:91px;}
 
 /* 바퀴용 애니메이션 */
 /* 애니메이션 적용 순서 1. 키프레임 (장면)생성 2. 애니메이션 호출 */
-@keyframes rotate360 {
+/* @keyframes rotate360 {
     from {transform: rotate(0);}
     to {transform: rotate(360deg);}
 }
+ */

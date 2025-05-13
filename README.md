@@ -1550,3 +1550,138 @@ background-clip: text;
 * 스크롤과 함께 움직이다가 특정 위치부터 고정된 경우 sticky
     * fixed 설저한 경우 해당 요소가 부유하기 때문에 그 다음 형제요소와 겹칠 경우 margin 설정
 * `min-width: 1920px;` : 완전히 데탑 페이지 전용으로 화면 줄여도 스크롤생김 안 깨짐 반응형 아님
+
+
+-----
+
+## 2025-05-12 css(12)
+### Grid
+- 그리드는 반응형웹에 특화된 레이아웃
+- Flex는 1차원 웹디자인이 가능, Grid는 2차원 레이아웃을 사용
+
+### **Grid 선언과 적용 형태**
+- Grid는 display 속성을 사용(Flex와 동일)
+- 블록(Block) 그리드와 인라인(inline) 그리드로 종류가 나뉨
+- grid가 선언된 부모(container) 기준으로 자식(item)까지만 item으로 인식
+```
+selector { display:flex; } /*flex의 경우*/
+selector { display:inline-flex; } /*flex의 경우*/
+
+selector { display:grid; } /*grid의 경우*/
+selector { display:inline-grid; } /*grid의 경우*/
+```
+
+### Grid fr 단위 
+- item 의 크기를 지정 시 고정 값이라면 px을 사용
+- item 의 크기를 지정 시 그리드의 남은 공간을 일부 설정하고 싶다면 fr 단위를 사용
+- 그리드 컨테이너의 가용 공간을 비율로 나눠 사용하는 단위
+- 고정크기 px % em로 정의된 트랙을 제외한 나머지 영역을 비례적으로 나눔
+- 유연한 레이아웃 간단한 비율설정 가용 공간 활용 flex 레이아웃의 flex:1과 특징 동일
+- Grid container 안 item의 비율을 일정하게 설정하고 싶은 경우
+- gri-속성명:1fr 1fr 1fr;
+- `grid-template-columns:repeat(3, 1fr);`
+- 필요에 따라 fr 단위와 px, % 등의 단위를 함께 활용할 수 있음
+- `grid-template-columns:1fr 100px;`
+
+### Grid 템플릿 행/열
+- 속성 : `grid-template-rows`, `grid-template-columns`
+- 값 track-size  (사용 단위 : px, rem, em, %, fr  등)
+- **Grid 행열 활용 예시 - 행(row) 크기 적용**
+```
+<div id="grid-container">
+  <div class="grid-item item1">a</div>
+  <div class="grid-item item2">b</div>
+</div>
+#grid-container {
+  display:grid;
+  grid-template-rows:50px 50px; /*1행 50, 2행 50*/
+}
+```
+- 배치된 행의 개수에 따라 위->아래 row track 순서로 값을 입력
+- 입력하지 않은 row track은 auto와 동일하게 인식
+- 일정 값을 row track에 반복하고 싶다면 Repeat() 함수 사용 가능
+```
+/*50px을 2개의 행에 반복한다*/
+grid-template-rows:repeat(2,50px);
+```
+- 최소 제한너비와 최대 제한 너비를 minmax() 함수를 이용하여 작성 가능
+- 모든 셀 최소 제한 너비 200px / 모든 셀 최대 제한 너비 자동(container의 나머지 공간 모두)
+```
+/*50px을 2개의 행에 반복한다*/
+grid-template-rows:repeat(2, minmax(200px, auto));
+```
+* 작성 편의를 위해 각 행에 이름을 의미있게 지정하여 값을 설정 가능
+```
+/*row1 track 50px, row2 track 100px 적용*/
+grid-template-rows:[row1 track] 50px [row2 track] 100px;
+```
+- **Grid 행열 활용 예시 - 열(column) 크기 적용**
+- 배치된 열의 개수에 따라 왼쪽->오른쪽 순서로 값을 입력
+```
+<div id="grid-container">
+  <div class="grid-item item1">a</div>
+  <div class="grid-item item2">b</div>
+  <div class="grid-item item3"c</div>
+</div>
+
+<div id="grid-container">
+  <div class="grid-item item1">a</div>
+  <div class="grid-item item2">b</div>
+  <div class="grid-item item3"c</div>
+</div>
+```
+-  auto를 입력하지 않으면 줄바꿈이 이루어지고 같은 수직 방향 column track과 크기를 동일하게 인식
+* 일정 값을 column track 반복하고 싶다면 Repeat() 함수를 사용 가능
+```
+/*50px을 3개의 열에 반복한다*/
+grid-template-columns:repeat(3,50px);
+```
+- 제한너비와 최대 제한 너비를 minmax() 함수를 이용하여 작성 가능
+- 모든 셀 최소 제한 너비 100px / 모든 셀 최대 제한 너비 200px (그 이상 키우면 container의 빈 공간 처리)
+```
+/*50px을 3개의 열에 반복한다*/
+grid-template-columns:repeat(3, minmax(100px, 200px));
+```
+* 작성 편의를 위해 각 열에 이름을 의미있게 지정하여 값을 설정 가능
+```
+/*name1 열에 50px, name2 열에 100px 적용*/
+grid-template-columns:[name1] 50px [name2] 100px;
+```
+* Grid 행+열 동시 입력하기
+- `< grid-template-columns > < grid-template-rows >`
+```
+열의 개수와 같은 개수로 값을 입력 시
+grid-template-columns:50px 100px 150px;
+grid-template-rows:100px;
+```
+```
+열의 개수보다 적은 개수로 값을 입력 시 
+grid-template-columns:50px 50px;
+grid-template-rows:repeat(2, 100px);
+```
+
+### Grid Template 그리드 템플릿 영역
+* Grid Cell : 4개의 그리드 라인이 모여 그려지는 공간을 그리드 셀 (유닛)
+* Grid Area : Grid Cell(또는 유닛)이 묶인 영역으로 식별자명을 작성하여 영역 구분 (요소를 배치할 때 사용하는 영역)
+* Grid cell이 묶인 영역에 grid area을 명칭하여 크기 및 위치를 조정하는 기능을 그리드 템플릿
+* Grid Area 템플릿 배치 시 기본적인 태그 item 순서에 따라 입력 순서를 정해야 ex) item1 item2 item3 item4 (O)
+
+### Grid Template 적용하기 <기본>
+1. HTML 작성
+2. CSS grid 적용과 각 grid cell을 묶어 grid-area 식별자 적용
+3. 식별자를 활용하여 grid 템플릿(template) 영역 설정
+
+### Grid Template 마침표(.) , none 활용
+- 마침표(.)는 비어있는 그리드 셀을 의미
+- none은 grid-area(그리드영역)으로 정의되지 않은 grid-cell(그리드셀)을 의미
+- grid-area는 2번이상 연속해서 반복하지 않으면 병합되지 않음
+
+### Grid Template 속기형(Shorthand) 속성
+- 그리드 템플릿의 속성을 한번에 묶어서 빠르게 사용할 수 있는 것을 속기형
+- 템플릿 행 / 열 / 영역명으로 설정이 가능
+- none 3가지 설정 값을 모두 초기값으로 적용할 때 사용
+
+
+### Grid 행/열 사이 간격(gap) Grid Gutters
+- 행과 열 사이 간격(Gap)을 Grid Gutters(그리드 거터)
+- 간격 방향에 따라 행 간격(Row Gutters), 열 간격(Column Gutters)으로 나뉨
