@@ -23,17 +23,33 @@
             background-position:center;
             opacity:0; transition:opacity 0.5s;
         }
-        .slide_wrap .slide_c .slide1 {background-image:url(images/bg1.jpg); opacity:1}
+        /* 확대 */
+        .slide_wrap .slide_c .slide1 {
+            background-image:url(images/bg1.jpg); opacity:1; 
+            animation: scale 2.5s linear forwards;}
+
+
         .slide_wrap .slide_c .slide2 {background-image:url(images/bg2.jpg);}
         .slide_wrap .slide_c .slide3 {background-image:url(images/bg3.jpg);}
+
+        /* 오퍼시티 */
         .slide_wrap .slide_c .slide p {
             text-align:center; color:#fff;
             font-size:3rem; letter-spacing:-1px;
             position:relative; top:400px;
+            animation: opacity 2.5s forwards;
         }
         /* class */
 
         /* animation */
+        @keyframes scale {
+            from {transform: scale(100%);}
+            to {transform: scale(110%);}
+        }
+        @keyframes opacity {
+            from {opacity: 0;}
+            to {opacity: 1; transform: translateY(-20px);}
+        }
 
     </style>
     <script>
