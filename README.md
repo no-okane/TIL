@@ -191,6 +191,25 @@
     * `유튜브닷컴/embed/영상 이름`
 
 
+### 유튜브 iframe 반응형
+```
+#wrap .video .container .iframe-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: calc(9/16 * 100%);
+    margin-bottom: 70px;
+}
+#wrap .video .container .iframe-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    display: block;
+    margin: 0 auto;
+    width: 100%; height: 100%;
+}
+```
+
+
 -----
 
 
@@ -1307,6 +1326,22 @@ input[type*=ex] {background-color:yellow;}
 }
 ```
 
+* **배경에 그라데이션 추가**
+```
+#wrap .intro::after {
+    content: '';/* 가상 요소 after 필수 속성 */
+    display: block;/* 가상 요소 after 필수 속성 */
+    width: 100%;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    background: linear-gradient(360deg, rgba(0,0,0,0.7), transparent);
+    z-index: 3;
+}
+```
+
 
 -----
 
@@ -1663,6 +1698,7 @@ grid-template-rows:repeat(2, 100px);
 ### Grid Template 그리드 템플릿 영역
 * Grid Cell : 4개의 그리드 라인이 모여 그려지는 공간을 그리드 셀 (유닛)
 * Grid Area : Grid Cell(또는 유닛)이 묶인 영역으로 식별자명을 작성하여 영역 구분 (요소를 배치할 때 사용하는 영역)
+    - 부모에 배치, 자식에게 이름 적용
 * Grid cell이 묶인 영역에 grid area을 명칭하여 크기 및 위치를 조정하는 기능을 그리드 템플릿
 * Grid Area 템플릿 배치 시 기본적인 태그 item 순서에 따라 입력 순서를 정해야 ex) item1 item2 item3 item4 (O)
 
