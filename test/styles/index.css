@@ -1,0 +1,39 @@
+main img {width: 100%;}
+main img.like {width:16px;}
+main {background: aqua; max-width: 1204px; min-width: 320px; margin: 0 auto;}
+main .wrap {display: flex;  justify-content: space-between;}
+main .wrap .brand {}
+main .wrap .brand h1 {}
+main .wrap .brand .big {width: 460px; height: 527px; overflow: hidden; position: relative;}
+main .wrap .brand .big a {}
+main .wrap .brand .big .thumnail img {width: auto; height: 100%; transform: translateX(-200px);}
+main .wrap .brand .big .like {position: absolute; top: 15px; right: 15px;}
+main .wrap .brand .big .like img {}
+main .wrap .right {width: 699px;}
+main .wrap .right h2 {}
+main .wrap .right > p {margin-bottom: 134px;}
+main .wrap .right .list {display: flex; gap: 15px;}
+main .wrap .right .list li {width: 223px;}
+main .wrap .right .list li a {}
+main .wrap .right .list li .brand {}
+main .wrap .right .list li .brand span {}
+main .wrap .right .list li .brand .like {}
+main .wrap .right .list li .brand .like img {}
+main .wrap .right .list li h3 {}
+main .wrap .right .list li .sale_price {}
+main .wrap .right .list li .sale_price span {}
+main .girl {}
+main .girl .title {}
+main .girl .title h1 {}
+main .girl .title a {}
+main .girl .list {display: flex; justify-content: space-between; gap: 5px;}
+main .girl .list li {width: calc(100% / 6);}
+main .girl .list li a {}
+main .girl .list li a img {}
+main .girl .list li .brand {}
+main .girl .list li .brand span {}
+main .girl .list li .brand .like {}
+main .girl .list li .brand .like img {}
+main .girl .list li h3 {}
+main .girl .list li .sale_price {}
+main .girl .list li .sale_price span {}
